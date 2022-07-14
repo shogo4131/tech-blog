@@ -39,6 +39,7 @@
     "react/function-component-definition": [2, { "namedComponents": "arrow-function" }],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
+    "@next/next/no-img-element": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/indent": "off",
