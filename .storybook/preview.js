@@ -1,6 +1,6 @@
 import { RouterContext } from 'next/dist/shared/lib/router-context';
 import '../src/styles/globals.css';
-import 'ress';
+import 'destyle.css';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
