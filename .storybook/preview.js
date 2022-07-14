@@ -1,6 +1,6 @@
-import * as nextImage from 'next/image';
 import { RouterContext } from 'next/dist/shared/lib/router-context';
 import '../src/styles/globals.css';
+import 'ress';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -15,9 +15,3 @@ export const parameters = {
     Provider: RouterContext.Provider,
   },
 };
-
-/* storybookでnext/imageを使用する設定 */
-Object.defineProperty(nextImage, 'default', {
-  configurable: true,
-  value: (props) => <img {...props} />,
-});
