@@ -1,5 +1,9 @@
 {
-  "extends": ["stylelint-config-standard", "stylelint-config-idiomatic-order"],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-idiomatic-order",
+    "stylelint-config-prettier"
+  ],
   "rules": {
     "at-rule-no-unknown": true,
     "property-no-unknown": true,

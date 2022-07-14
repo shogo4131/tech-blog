@@ -3,9 +3,7 @@
   "plugins": ["import", "@typescript-eslint", "prettier"],
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:@next/next/recommended",
+    "next",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:import/recommended",
