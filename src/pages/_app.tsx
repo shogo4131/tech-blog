@@ -1,5 +1,5 @@
 import '../styles/globals.css';
-import 'ress';
+import 'destyle.css';
 import type { AppProps } from 'next/app';
 
 const App = ({ Component, pageProps }: AppProps) => {
