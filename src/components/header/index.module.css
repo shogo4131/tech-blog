@@ -1,0 +1,19 @@
+.root {
+  display: flex;
+  height: 77px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 48px;
+  background-color: var(--color-gray-500);
+  color: var(--color-white);
+  font-size: 32px;
+}
+
+.headerBanner {
+  display: flex;
+  column-gap: 4px;
+}
+
+.image {
+  display: flex;
+}
