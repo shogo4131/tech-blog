@@ -1,11 +1,14 @@
 .wrapper {
+  position: relative;
   display: flex;
   width: 100%;
   flex-direction: column;
 }
 
 .inputWrapper {
+  display: flex;
   width: 100%;
+  align-items: center;
 }
 
 .label {
@@ -14,7 +17,7 @@
 
 .input {
   width: 100%;
-  min-height: 35px;
+  min-height: 40px;
   padding: 4px 12px;
   border: solid 1px var(--color-gray-200);
   border-radius: 8px;
@@ -27,6 +30,13 @@
 .input::placeholder {
   color: var(--color-gray-100);
   font-size: 14px;
+}
+
+.surffixIcon {
+  position: absolute;
+  right: 4px;
+  padding: 0 20px;
+  background-color: var(--color-white);
 }
 
 .error {

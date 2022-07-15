@@ -25,3 +25,9 @@ export const Error: ComponentStoryObj<typeof InputFiled> = {
     error: 'error message',
   },
 };
+
+export const SurffixIcon: ComponentStoryObj<typeof InputFiled> = {
+  args: {
+    surffixIcon: '/images/search.svg',
+  },
+};
