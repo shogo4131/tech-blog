@@ -1,0 +1,36 @@
+.wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.inputWrapper {
+  width: 100%;
+}
+
+.label {
+  margin-bottom: 8px;
+}
+
+.input {
+  width: 100%;
+  min-height: 35px;
+  padding: 4px 12px;
+  border: solid 1px var(--color-gray-200);
+  border-radius: 8px;
+}
+
+.input:focus {
+  border: solid 1px var(--color-blue-500);
+}
+
+.input::placeholder {
+  color: var(--color-gray-100);
+  font-size: 14px;
+}
+
+.error {
+  margin-top: 0.5em;
+  margin-bottom: unset;
+  color: var(--color-error);
+}
