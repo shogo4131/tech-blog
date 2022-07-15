@@ -11,7 +11,7 @@
 
 .headerBanner {
   display: flex;
-  column-gap: 4px;
+  column-gap: 8px;
 }
 
 .image {
