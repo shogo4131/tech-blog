@@ -1,0 +1,33 @@
+.wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: 8px;
+}
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 12px;
+  border: solid 1px var(--color-gray-200);
+  border-radius: 8px;
+}
+
+.textarea:focus {
+  border: solid 1px var(--color-error);
+}
+
+.length {
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+  font-size: 12px;
+}
