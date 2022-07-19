@@ -20,6 +20,13 @@ export const Lable: ComponentStoryObj<typeof InputFiled> = {
   },
 };
 
+export const Required: ComponentStoryObj<typeof InputFiled> = {
+  args: {
+    label: 'label',
+    required: true,
+  },
+};
+
 export const Error: ComponentStoryObj<typeof InputFiled> = {
   args: {
     error: 'error message',

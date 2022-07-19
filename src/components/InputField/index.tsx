@@ -10,6 +10,7 @@ type Props = {
   wrapperClassName?: string;
   inputClassName?: string;
   surffixIcon?: string;
+  required?: boolean;
   label?: string;
   error?: string;
   onChange: ChangeEventHandler<HTMLInputElement>;
@@ -21,6 +22,7 @@ export const InputFiled: FC<Props> = ({
   wrapperClassName,
   inputClassName,
   surffixIcon,
+  required = false,
   label,
   error,
   onChange,
@@ -29,7 +31,10 @@ export const InputFiled: FC<Props> = ({
   return (
     <label className={className}>
       <div className={styles.wrapper}>
-        {label && <span className={clsx(styles.label, labelClassName)}>{label}</span>}
+        <div className={clsx(styles.label, labelClassName)}>
+          {label && <span className={styles.title}>{label}</span>}
+          {required && <span className={styles.required}>必須</span>}
+        </div>
         <div className={clsx(styles.inputWrapper, wrapperClassName)}>
           <input {...rest} className={clsx(styles.input, inputClassName)} onChange={onChange} />
           {surffixIcon && (

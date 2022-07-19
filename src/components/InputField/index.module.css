@@ -12,7 +12,23 @@
 }
 
 .label {
+  display: flex;
+  align-items: center;
   margin-bottom: 8px;
+  font-size: 14px;
+}
+
+title {
+  font-size: 14px;
+}
+
+.required {
+  padding: 2px 4px;
+  margin-left: 8px;
+  background-color: var(--color-red-500);
+  border-radius: 4px;
+  color: var(--color-white);
+  font-size: 10px;
 }
 
 .input {
@@ -42,5 +58,5 @@
 .error {
   margin-top: 0.5em;
   margin-bottom: unset;
-  color: var(--color-error);
+  color: var(--color-red-500);
 }
