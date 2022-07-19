@@ -30,7 +30,7 @@ export const BreadCrumb: FC<Props> = ({ className, items }) => {
 
   return (
     <div className={clsx(styles.root, className)}>
-      <img src="/images/home.svg" alt="home" height={16} width={18} />
+      <img src="/images/home.svg" alt="home" className={styles.homeIcon} height={11} width={11} />
       {items.map(({ id, href, label }) => (
         <Fragment key={id}>
           <div
@@ -39,11 +39,11 @@ export const BreadCrumb: FC<Props> = ({ className, items }) => {
           >
             {label}
           </div>
-          {/* {href && <Image alt="arrow-right" src={ArrowRightIcon} className={styles.icon} />} */}
+          {href && (
+            <img src="/images/arrow-right.svg" alt="arrow-right" className={styles.arrowRight} />
+          )}
         </Fragment>
       ))}
     </div>
   );
 };
-
-export default BreadCrumb;
