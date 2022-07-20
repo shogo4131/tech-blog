@@ -21,10 +21,6 @@
   border-radius: 8px;
 }
 
-.textarea:focus {
-  border: solid 1px var(--color-error);
-}
-
 .length {
   position: absolute;
   right: 15px;
