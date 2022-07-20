@@ -1,0 +1,10 @@
+.root {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  font-size: 14px;
+}
+
+.arrowIcon {
+  transform: rotate(180deg);
+}
