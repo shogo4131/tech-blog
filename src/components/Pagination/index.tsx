@@ -6,7 +6,7 @@ import { range } from '../../utils/range';
 
 import styles from './index.module.css';
 
-type Props = {
+export type Props = {
   className?: string;
   activePage: number;
   totalPageSize: number;
@@ -15,8 +15,8 @@ type Props = {
 
 const START_PAGE = 1;
 const DIFFERENCE = 1;
-const DISPLAY_PAGE_SIZE = 10;
-const STATIC_POSITION_NUMBER = 6;
+const DISPLAY_PAGE_SIZE = 5;
+const STATIC_POSITION_NUMBER = 5;
 
 export const Pagination: FC<Props> = ({ className, activePage, totalPageSize, onChange }) => {
   const min = useMemo(() => {
@@ -25,9 +25,9 @@ export const Pagination: FC<Props> = ({ className, activePage, totalPageSize, on
 
     if (totalPageSize - activePage < DISPLAY_PAGE_SIZE - STATIC_POSITION_NUMBER) {
       minPage = totalPageSize - DISPLAY_PAGE_SIZE + 1;
+    } else {
+      minPage = activePage - STATIC_POSITION_NUMBER + 1;
     }
-
-    minPage = activePage - STATIC_POSITION_NUMBER + 1;
 
     return Math.max(Math.min(minPage, totalPageSize), START_PAGE);
   }, [activePage, totalPageSize]);
@@ -40,8 +40,17 @@ export const Pagination: FC<Props> = ({ className, activePage, totalPageSize, on
 
   return (
     <div className={clsx(styles.root, className)}>
-      <div className={styles.buttonContainer}>
-        <button type="button" className={styles.arrowIcon} onClick={() => onChange(START_PAGE)}>
+      <div
+        className={clsx(styles.buttonContainer, {
+          [styles.hiddenButton]: activePage === START_PAGE,
+        })}
+      >
+        <button
+          type="button"
+          className={styles.arrowIcon}
+          disabled={activePage === START_PAGE}
+          onClick={() => onChange(START_PAGE)}
+        >
           <img src="/images/arrow-right-double-gray.svg" alt="top" height={22} width={22} />
         </button>
         <button
@@ -53,11 +62,20 @@ export const Pagination: FC<Props> = ({ className, activePage, totalPageSize, on
         </button>
       </div>
       {range(displayLength, min).map((num) => (
-        <button type="button" key={num} onClick={() => onChange(num)}>
+        <button
+          type="button"
+          key={num}
+          className={clsx(styles.numButton, { [styles.active]: num === activePage })}
+          onClick={() => onChange(num)}
+        >
           {num}
         </button>
       ))}
-      <div className={styles.buttonContainer}>
+      <div
+        className={clsx(styles.buttonContainer, {
+          [styles.hiddenButton]: activePage === totalPageSize,
+        })}
+      >
         <button
           type="button"
           onClick={() => onChange(Math.min(activePage + DIFFERENCE, totalPageSize))}

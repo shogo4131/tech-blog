@@ -8,3 +8,21 @@
 .arrowIcon {
   transform: rotate(180deg);
 }
+
+.numButton {
+  display: flex;
+  width: 22px;
+  height: 22px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.hiddenButton {
+  visibility: hidden;
+}
+
+.active {
+  background-color: var(--color-gray-500);
+  color: var(--color-white);
+}
