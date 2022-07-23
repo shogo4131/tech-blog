@@ -6,4 +6,4 @@ export default {
   component: Navigation,
 } as ComponentMeta<typeof Navigation>;
 
-export const Default: ComponentStoryObj<typeof  Navigation> = {};
+export const Default: ComponentStoryObj<typeof Navigation> = {};

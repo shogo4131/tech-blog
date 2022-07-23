@@ -40,5 +40,5 @@ export default {
   component: {{ inputs.name | pascal }},
 } as ComponentMeta<typeof {{ inputs.name | pascal }}>;
 
-export const Default: ComponentStoryObj<typeof  {{ inputs.name | pascal }}> = {};
+export const Default: ComponentStoryObj<typeof {{ inputs.name | pascal }}> = {};
 ```
