@@ -4,9 +4,9 @@ import Link from 'next/link';
 
 import styles from './index.module.css';
 
-export const Footer: FC = () => {
-  const date = new Date();
+const date = new Date();
 
+export const Footer: FC = () => {
   // TODO: プライバシーポリシーページリンク追加
   return (
     <footer className={styles.root}>
