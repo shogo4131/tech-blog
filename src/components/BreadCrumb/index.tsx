@@ -12,7 +12,7 @@ type Props = {
   items: Crumbs[];
 };
 
-type Crumbs = {
+export type Crumbs = {
   id: number;
   label: string;
   href?: string;
@@ -40,7 +40,13 @@ export const BreadCrumb: FC<Props> = ({ className, items }) => {
             {label}
           </div>
           {href && (
-            <img src="/images/arrow-right.svg" alt="arrow-right" className={styles.arrowRight} />
+            <img
+              src="/images/arrow-right.svg"
+              alt="arrow-right"
+              className={styles.arrowRight}
+              height={14}
+              width={14}
+            />
           )}
         </Fragment>
       ))}
