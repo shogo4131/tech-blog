@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 96px;
   background-color: var(--color-gray-500);
   color: var(--color-white);
   gap: 16px;
