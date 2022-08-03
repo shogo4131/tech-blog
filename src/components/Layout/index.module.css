@@ -1,4 +1,5 @@
 .root {
+  display: flex;
   height: auto;
   padding: 20px 48px 30px;
 }
