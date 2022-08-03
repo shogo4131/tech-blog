@@ -1,0 +1,62 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.inputWrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+title {
+  font-size: 14px;
+}
+
+.required {
+  padding: 2px 4px;
+  margin-left: 8px;
+  background-color: var(--color-red-500);
+  border-radius: 4px;
+  color: var(--color-white);
+  font-size: 10px;
+}
+
+.input {
+  width: 100%;
+  min-height: 40px;
+  padding: 4px 12px;
+  border: solid 1px var(--color-gray-200);
+  border-radius: 8px;
+}
+
+.input:focus {
+  border: solid 1px var(--color-blue-500);
+}
+
+.input::placeholder {
+  color: var(--color-gray-100);
+  font-size: 14px;
+}
+
+.surffixIcon {
+  position: absolute;
+  right: 4px;
+  padding: 0 20px;
+  background-color: var(--color-white);
+}
+
+.error {
+  margin-top: 0.5em;
+  margin-bottom: unset;
+  color: var(--color-red-500);
+}

@@ -1,0 +1,26 @@
+.title {
+  margin-top: 32px;
+  color: var(--color-gray-500);
+  font-size: 24px;
+}
+
+.contents {
+  margin-top: 40px;
+  line-height: 28px;
+}
+
+.contents > p {
+  font-size: 14px;
+}
+
+.contents > p:first-child {
+  margin-bottom: 40px;
+}
+
+.subtitle {
+  padding: 12px 20px;
+  margin: 40px 0 20px;
+  background-color: var(--color-gray-500);
+  color: var(--color-white);
+  font-size: 20px;
+}

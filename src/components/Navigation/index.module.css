@@ -1,0 +1,23 @@
+.root {
+  position: sticky;
+  z-index: 999;
+  top: 0;
+  width: 100%;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--color-gray-100);
+  background-color: var(--color-white);
+  color: var(--color-gray-200);
+  font-size: 14px;
+}
+
+.lists {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.subtitle {
+  margin-top: 2px;
+  font-size: 10px;
+}

@@ -1,0 +1,23 @@
+.root {
+  display: flex;
+  align-items: center;
+}
+
+/* TODO: iconを中央にmarginじゃない方法で揃えたい */
+.homeIcon {
+  margin-bottom: 3.5px;
+}
+
+.label {
+  margin-left: 4px;
+  color: var(--color-gray-200);
+  font-size: 10px;
+}
+
+.label:not(:last-child) {
+  cursor: pointer;
+}
+
+.arrowRight {
+  margin: 0 0 2px 2px;
+}
