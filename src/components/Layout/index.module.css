@@ -1,4 +1,4 @@
 .root {
-  height: calc(100vh - 77px - 47px);
+  height: auto;
   padding: 20px 48px 30px;
 }
