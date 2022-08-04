@@ -14,18 +14,21 @@
     "prettier:fix": "prettier --write .",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "api:build": "aspida",
     "prepare": "husky install"
   },
   "engines": {
     "node": "16.14.x"
   },
   "dependencies": {
+    "@aspida/fetch": "^1.10.3",
     "clsx": "^1.1.1",
     "destyle.css": "^3.0.2",
     "microcms-js-sdk": "^2.0.0",
     "next": "^12.2.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "use-media": "^1.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.6",
