@@ -31,3 +31,7 @@
 .profileDetail {
   color: var(--color-blue-300);
 }
+
+.arrowIcon {
+  vertical-align: text-bottom;
+}

@@ -4,12 +4,11 @@ import Link from 'next/link';
 
 import styles from './index.module.css';
 
-//TODO: 詳細のiconズレを修正
 export const Profile: FC = () => {
   return (
     <div className={styles.root}>
       <div className={styles.title}>
-        <img src="/images/profile.svg" alt="profile" height={30} width={30} />
+        <img src="/images/profile.svg" alt="プロフィール" height={30} width={30} />
         <div className={styles.profile}>
           <h4>プロフィール</h4>
           <span>Profile</span>
@@ -28,7 +27,13 @@ export const Profile: FC = () => {
             <Link href="/">
               <a className={styles.profileDetail}>
                 こちら
-                <img src="/images/chevron-right.svg" alt="" height={12} width={12} />
+                <img
+                  src="/images/arrow-right-blue.svg"
+                  alt="プロフィール詳細"
+                  height={12}
+                  width={12}
+                  className={styles.arrowIcon}
+                />
               </a>
             </Link>
           </p>
