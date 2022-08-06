@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 
-import { BreadCrumb, Crumbs } from 'components/BreadCrumb';
-import { Layout } from 'components/Layout';
+import { BreadCrumb, Crumbs } from '@/components/BreadCrumb';
+import { Layout } from '@/components/Layout';
 
 import styles from './index.module.css';
 

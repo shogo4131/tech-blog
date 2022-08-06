@@ -3,9 +3,9 @@ import { ChangeEvent, FC, useState } from 'react';
 import clsx from 'clsx';
 import { useMedia } from 'use-media';
 
-import { InputFiled } from '../InputField';
+import { InputFiled } from '@/components/InputField';
+import { Profile } from '@/components/Sidebar/Profile';
 
-import { Profile } from './Profile';
 import styles from './index.module.css';
 
 type Props = {

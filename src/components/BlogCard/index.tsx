@@ -2,8 +2,8 @@ import { FC } from 'react';
 
 import Link from 'next/link';
 
-import type { BlogContent } from '../../types/blog';
-import { formatDate } from '../../utils/dateformat';
+import type { BlogContent } from '@/types/blog';
+import { formatDate } from '@/utils/dateformat';
 
 import styles from './index.module.css';
 

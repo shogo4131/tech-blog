@@ -4,11 +4,10 @@ import clsx from 'clsx';
 import type { MicroCMSListResponse } from 'microcms-js-sdk';
 import { useMedia } from 'use-media';
 
-import { BlogCard } from 'components/BlogCard';
-import { Layout } from 'components/Layout';
-import { client } from 'lib/client';
-
-import type { Blog, BlogContent } from '../types/blog';
+import { BlogCard } from '@/components/BlogCard';
+import { Layout } from '@/components/Layout';
+import { client } from '@/lib/client';
+import type { Blog, BlogContent } from '@/types/blog';
 
 import styles from './index.module.css';
 
