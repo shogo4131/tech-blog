@@ -2,21 +2,19 @@ import { FC } from 'react';
 
 import Link from 'next/link';
 
+import type { BlogContent } from '../../types/blog';
+import { formatDate } from '../../utils/dateformat';
+
 import styles from './index.module.css';
 
-type Props = {
-  image: string;
-  tags: string[];
-  title: string;
-};
+type Props = Pick<BlogContent, 'title' | 'thumbnail' | 'tags' | 'createdAt'>;
 
-// TODO: APIの方が決まり次第修正
-// TODO: 画像の最小値設定
-export const BlogCard: FC<Props> = ({ image, tags, title }) => {
+// TODO: タグ絞り込み、ブログ詳細ページへリンク追加
+export const BlogCard: FC<Props> = ({ title, thumbnail, tags, createdAt }) => {
   return (
     <div className={styles.root}>
       <div>
-        <img src={image} alt="thumbnail" className={styles.thumbnail} />
+        <img src={thumbnail.url} alt="thumbnail" className={styles.thumbnail} />
       </div>
       <div className={styles.title}>
         <h3>
@@ -28,14 +26,14 @@ export const BlogCard: FC<Props> = ({ image, tags, title }) => {
       <div className={styles.content}>
         <div className={styles.date}>
           <Link href="/">
-            <a>2022/07/20</a>
+            <a>{formatDate(createdAt)}</a>
           </Link>
         </div>
         <div className={styles.tags}>
-          {tags.map((tag) => (
-            <span className={styles.tag} key={tag}>
+          {tags.map(({ id, tags }) => (
+            <span className={styles.tag} key={id}>
               <Link href="/">
-                <a>{tag}</a>
+                <a>{tags}</a>
               </Link>
             </span>
           ))}
