@@ -32,7 +32,7 @@ export const BlogCard: FC<Props> = ({ title, thumbnail, tags, createdAt }) => {
         <div className={styles.tags}>
           {tags.map(({ id, tags }) => (
             <span className={styles.tag} key={id}>
-              <Link href="/">
+              <Link href={`/tags/${id}`}>
                 <a>{tags}</a>
               </Link>
             </span>
