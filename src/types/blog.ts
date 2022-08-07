@@ -1,5 +1,5 @@
 export type Blog = {
-  contents: BlogContent;
+  contents: BlogContent[];
   totalCount: number;
   offset: number;
   limit: number;
@@ -9,7 +9,7 @@ export type BlogContent = {
   id: string;
   body: string;
   title: string;
-  tags: Tag[];
+  tags: TagContent[];
   categorys: Category[];
   thumbnail: {
     url: string;
@@ -23,6 +23,13 @@ export type BlogContent = {
 };
 
 export type Tag = {
+  contents: TagContent[];
+  totalCount: number;
+  offset: number;
+  limit: number;
+};
+
+export type TagContent = {
   id: string;
   tags: string;
   createdAt: string;
@@ -33,4 +40,4 @@ export type Tag = {
 
 export type Category = {
   category: string;
-} & Omit<Tag, 'tag'>;
+} & Omit<Tag, 'tags'>;
