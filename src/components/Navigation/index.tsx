@@ -4,21 +4,22 @@ import Link from 'next/link';
 
 import styles from './index.module.css';
 
+// TODO: リンクをidから戻す
 const navigationHeaders = [
   {
     title: 'フロントエンド',
     subtitle: 'Front end',
-    href: '/category/frontend',
+    href: '/category/g2q9m1g39',
   },
   {
     title: 'バックエンド',
     subtitle: 'Back end',
-    href: '/category/backend',
+    href: '/category/monnb9cn3',
   },
   {
     title: 'その他',
     subtitle: 'Others',
-    href: '/category/othner',
+    href: '/category/toh-fmhx_u',
   },
   {
     title: 'サイトマップ',
