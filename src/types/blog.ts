@@ -31,7 +31,7 @@ export type Tag = {
 
 export type TagContent = {
   id: string;
-  tags: string;
+  tag: string;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;

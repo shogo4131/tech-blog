@@ -9,7 +9,7 @@ import styles from './index.module.css';
 
 type Props = Pick<BlogContent, 'title' | 'thumbnail' | 'tags' | 'createdAt'>;
 
-// TODO: タグ絞り込み、ブログ詳細ページへリンク追加
+// TODO: ブログ詳細ページへリンク追加
 export const BlogCard: FC<Props> = ({ title, thumbnail, tags, createdAt }) => {
   return (
     <div className={styles.root}>
@@ -30,10 +30,10 @@ export const BlogCard: FC<Props> = ({ title, thumbnail, tags, createdAt }) => {
           </Link>
         </div>
         <div className={styles.tags}>
-          {tags.map(({ id, tags }) => (
+          {tags.map(({ id, tag }) => (
             <span className={styles.tag} key={id}>
               <Link href={`/tags/${id}`}>
-                <a>{tags}</a>
+                <a>{tag}</a>
               </Link>
             </span>
           ))}

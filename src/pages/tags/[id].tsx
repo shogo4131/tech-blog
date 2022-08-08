@@ -82,7 +82,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   return {
     props: {
       contents: blog.contents,
-      tag: tag[0].tags,
+      tag: tag[0].tag,
     },
   };
 };
