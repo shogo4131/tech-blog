@@ -9,12 +9,12 @@ import { BlogCard } from '@/components/BlogCard';
 import { BreadCrumb, Crumbs } from '@/components/BreadCrumb';
 import { Layout } from '@/components/Layout';
 import { client } from '@/lib/client';
-import type { Category, Blog, BlogContent } from '@/types/blog';
+import type { CategoryResponseData, BlogResponseData, Blog } from '@/types/api';
 
 import styles from '../index.module.css';
 
 type Props = {
-  contents: BlogContent[];
+  contents: Blog[];
   category: string;
 };
 
@@ -60,7 +60,7 @@ const Category: NextPage<Props> = ({ contents, category }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const categories = await client.get<Category>({ endpoint: 'category' });
+  const categories = await client.get<CategoryResponseData>({ endpoint: 'category' });
   const paths = categories.contents.map(({ id }) => `/category/${id}`);
 
   return {
@@ -73,7 +73,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   if (!ctx.params) return { notFound: true };
   const id = ctx.params.id && Array.isArray(ctx.params.id) ? ctx.params.id[0] : ctx.params.id ?? '';
 
-  const blog = await client.get<Blog>({
+  const blog = await client.get<BlogResponseData>({
     endpoint: `blog`,
     queries: { filters: `category[contains]${id}` },
   });

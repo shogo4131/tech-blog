@@ -2,12 +2,12 @@ import { FC } from 'react';
 
 import Link from 'next/link';
 
-import type { BlogContent } from '@/types/blog';
+import type { Blog } from '@/types/api';
 import { formatDate } from '@/utils/dateformat';
 
 import styles from './index.module.css';
 
-type Props = Pick<BlogContent, 'title' | 'thumbnail' | 'tags' | 'createdAt'>;
+type Props = Pick<Blog, 'title' | 'thumbnail' | 'tags' | 'createdAt'>;
 
 // TODO: ブログ詳細ページへリンク追加
 export const BlogCard: FC<Props> = ({ title, thumbnail, tags, createdAt }) => {

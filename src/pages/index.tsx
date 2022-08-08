@@ -7,12 +7,12 @@ import { useMedia } from 'use-media';
 import { BlogCard } from '@/components/BlogCard';
 import { Layout } from '@/components/Layout';
 import { client } from '@/lib/client';
-import type { Blog, BlogContent } from '@/types/blog';
+import type { Blog, BlogResponseData } from '@/types/api';
 
 import styles from './index.module.css';
 
 // TODO: 画面サイズをconstantディレクトリに定義する
-const Home: NextPage<MicroCMSListResponse<BlogContent>> = ({ contents }) => {
+const Home: NextPage<MicroCMSListResponse<Blog>> = ({ contents }) => {
   const xl = useMedia({ maxWidth: '1200px' });
   const sm = useMedia({ maxWidth: '540px' });
 
@@ -34,7 +34,7 @@ const Home: NextPage<MicroCMSListResponse<BlogContent>> = ({ contents }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const blog = await client.get<Blog>({ endpoint: 'blog' });
+  const blog = await client.get<BlogResponseData>({ endpoint: 'blog' });
 
   return {
     props: {
