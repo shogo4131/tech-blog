@@ -10,7 +10,7 @@ export type BlogContent = {
   body: string;
   title: string;
   tags: TagContent[];
-  categorys: Category[];
+  category: CategoryContent[];
   thumbnail: {
     url: string;
     height: number;
@@ -39,5 +39,12 @@ export type TagContent = {
 };
 
 export type Category = {
+  contents: CategoryContent[];
+  totalCount: number;
+  offset: number;
+  limit: number;
+};
+
+export type CategoryContent = {
   category: string;
-} & Omit<Tag, 'tags'>;
+} & Omit<TagContent, 'tags'>;
