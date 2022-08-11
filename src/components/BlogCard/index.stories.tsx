@@ -15,7 +15,7 @@ export const Default: ComponentStoryObj<typeof BlogCard> = {
     },
     tags: [
       {
-        tags: 'React',
+        tag: 'React',
         id: '1',
         createdAt: '',
         publishedAt: '',
@@ -23,7 +23,7 @@ export const Default: ComponentStoryObj<typeof BlogCard> = {
         revisedAt: '',
       },
       {
-        tags: 'AWS',
+        tag: 'AWS',
         id: '1',
         createdAt: '',
         publishedAt: '',
