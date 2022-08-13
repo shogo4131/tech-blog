@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export && next-sitemap --config next-sitemap.config.js",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
@@ -16,9 +16,6 @@
     "build-storybook": "build-storybook",
     "analyze": "ANALYZE=true next build",
     "prepare": "husky install"
-  },
-  "engines": {
-    "node": "16.14.x"
   },
   "dependencies": {
     "clsx": "^1.1.1",
@@ -60,6 +57,7 @@
     "husky": "^8.0.1",
     "jest": "^28.1.2",
     "jest-environment-jsdom": "^28.1.2",
+    "next-sitemap": "^3.1.16",
     "prettier": "^2.7.1",
     "scaffdog": "^1.5.0",
     "storybook-addon-next-router": "^4.0.0",
