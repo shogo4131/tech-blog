@@ -21,6 +21,6 @@
       "@/public/*": ["../public/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "aspida.config.js"],
+  "include": ["next-env.d.ts", "src/**/*", "**/*.ts", "**/*.tsx", "aspida.config.js"],
   "exclude": ["node_modules"]
 }
