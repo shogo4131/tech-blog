@@ -3,10 +3,10 @@ import { FC, ReactNode } from 'react';
 import clsx from 'clsx';
 import { useMedia } from 'use-media';
 
-import { Footer } from 'src/components/Footer';
-import { Header } from 'src/components/Header';
-import { Navigation } from 'src/components/Navigation';
-import { Sidebar } from 'src/components/Sidebar';
+import { Footer } from '@/components/Footer';
+import { Header } from '@/components/Header';
+import { Navigation } from '@/components/Navigation';
+import { Sidebar } from '@/components/Sidebar';
 
 import styles from './index.module.css';
 
