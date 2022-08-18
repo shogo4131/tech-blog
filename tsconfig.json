@@ -14,13 +14,16 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": "./",
+    "baseUrl": "src",
     "paths": {
-      "@/*": ["src/*"],
-      "@/components/*": ["src/components/*"],
-      "@/public/*": ["../public/*"]
+      "@/components/*": ["components/*"],
+      "@/config/*": ["config/*"],
+      "@/lib/*": ["lib/*"],
+      "@/share/*": ["share/*"],
+      "@/types/*": ["types/*"],
+      "@/utils/*": ["utils/*"]
     }
   },
-  "include": ["next-env.d.ts", "src/**/*", "**/*.ts", "**/*.tsx", "aspida.config.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
