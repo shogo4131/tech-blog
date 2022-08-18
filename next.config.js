@@ -6,6 +6,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 const nextConfig = {
   reactStrictMode: true,
+  ignoreBuildErrors: true,
 };
 
 module.exports = withBundleAnalyzer({
