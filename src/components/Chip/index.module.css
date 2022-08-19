@@ -1,0 +1,23 @@
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 10px;
+}
+
+.tag {
+  padding: 4px 8px;
+  margin-right: 4px;
+  background-color: var(--color-gray-500);
+  border-radius: 4px;
+  color: var(--color-white);
+  cursor: pointer;
+  line-height: 12px;
+}
+
+.tag:hover {
+  background-color: var(--color-gray-400);
+}
+
+.tag:last-child {
+  margin-right: 0;
+}
