@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import { useMedia } from 'use-media';
 
 import { InputFiled } from '@/components/InputField';
+import { CategoryList } from '@/components/Sidebar/CategoryList';
 import { Profile } from '@/components/Sidebar/Profile';
 import { TagList } from '@/components/Sidebar/TagList';
 
@@ -34,6 +35,7 @@ export const Sidebar: FC<Props> = () => {
       )}
       <Profile />
       <TagList />
+      <CategoryList />
     </aside>
   );
 };

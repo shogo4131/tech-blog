@@ -1,0 +1,27 @@
+.root {
+  margin-top: 32px;
+  color: var(--color-gray-200);
+}
+
+.title {
+  display: flex;
+  font-size: 14px;
+}
+
+.category {
+  margin-left: 12px;
+}
+
+.category > span {
+  font-size: 10px;
+}
+
+.contents {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.item {
+  padding: 16px 0 12px;
+  border-bottom: 0.5px solid var(--color-gray-200);
+}
