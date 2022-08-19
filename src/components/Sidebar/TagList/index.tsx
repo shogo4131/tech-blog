@@ -12,7 +12,7 @@ export const TagList: FC = () => {
   return (
     <div className={styles.root}>
       <div className={styles.title}>
-        <img src="/images/tag.svg" alt="プロフィール" height={30} width={30} />
+        <img src="/images/tag.svg" alt="タグ一覧" height={30} width={30} />
         <div className={styles.tag}>
           <h4>タグ一覧</h4>
           <span>Tag Lists</span>
