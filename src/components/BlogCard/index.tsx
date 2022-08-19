@@ -2,6 +2,7 @@ import { FC } from 'react';
 
 import Link from 'next/link';
 
+import { Chip } from '@/components/Chip';
 import type { Blog } from '@/types/api';
 import { formatDate } from '@/utils/dateformat';
 
@@ -35,15 +36,7 @@ export const BlogCard: FC<Props> = ({ title, thumbnail, tags, createdAt }) => {
             <a>{formatDate(createdAt)}</a>
           </Link>
         </div>
-        <div className={styles.tags}>
-          {tags.map(({ id, tag }) => (
-            <Link href={`/tags/${id}`} key={id}>
-              <span className={styles.tag}>
-                <a>{tag}</a>
-              </span>
-            </Link>
-          ))}
-        </div>
+        <Chip tags={tags} />
       </div>
     </div>
   );
