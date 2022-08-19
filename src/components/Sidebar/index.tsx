@@ -5,6 +5,7 @@ import { useMedia } from 'use-media';
 
 import { InputFiled } from '@/components/InputField';
 import { Profile } from '@/components/Sidebar/Profile';
+import { TagList } from '@/components/Sidebar/TagList';
 
 import styles from './index.module.css';
 
@@ -32,6 +33,7 @@ export const Sidebar: FC<Props> = () => {
         />
       )}
       <Profile />
+      <TagList />
     </aside>
   );
 };
