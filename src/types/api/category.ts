@@ -2,6 +2,8 @@
  * Category API
  */
 
+import { Blog } from './blog';
+
 export type CategoryResponseData = {
   contents: Category[];
   totalCount: number;
@@ -16,4 +18,5 @@ export type Category = {
   updatedAt: string;
   publishedAt: string;
   revisedAt: string;
+  post: Blog[];
 };
