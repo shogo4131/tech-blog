@@ -41,7 +41,7 @@ const Tags: NextPage<Props> = ({ contents, tag }) => {
   return (
     <Layout>
       <article>
-        <BreadCrumb items={breadCrumbs} />
+        <BreadCrumb items={breadCrumbs} className={styles.breadCrumb} />
         <div className={clsx(styles.blogItem, { [styles.xl]: xl, [styles.sm]: sm })}>
           {contents.map(({ id, title, tags, thumbnail, createdAt }) => (
             <BlogCard
