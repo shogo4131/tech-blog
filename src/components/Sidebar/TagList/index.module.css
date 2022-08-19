@@ -1,0 +1,25 @@
+.root {
+  margin-top: 32px;
+  color: var(--color-gray-200);
+}
+
+.title {
+  display: flex;
+  font-size: 14px;
+}
+
+.tag {
+  margin-left: 12px;
+}
+
+.tag > span {
+  font-size: 10px;
+}
+
+.contents {
+  margin-top: 12px;
+}
+
+.tagList {
+  margin-bottom: 4px;
+}
