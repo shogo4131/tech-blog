@@ -4,14 +4,12 @@ import Link from 'next/link';
 
 import { Chip } from '@/components/Chip';
 import type { Blog } from '@/types/api';
-import { formatDate } from '@/utils/dateformat';
 
 import styles from './index.module.css';
 
-type Props = Pick<Blog, 'title' | 'thumbnail' | 'tags' | 'createdAt'>;
+type Props = Pick<Blog, 'id' | 'title' | 'thumbnail' | 'tags' | 'createdAt'>;
 
-// TODO: ブログ詳細ページへリンク追加
-export const BlogCard: FC<Props> = ({ title, thumbnail, tags, createdAt }) => {
+export const BlogCard: FC<Props> = ({ id, title, thumbnail, tags, createdAt }) => {
   return (
     <div className={styles.root}>
       <div>
@@ -25,16 +23,14 @@ export const BlogCard: FC<Props> = ({ title, thumbnail, tags, createdAt }) => {
       </div>
       <div className={styles.title}>
         <h3>
-          <Link href="/">
+          <Link href={`/blog/${id}`}>
             <a>{title}</a>
           </Link>
         </h3>
       </div>
       <div className={styles.content}>
         <div className={styles.date}>
-          <Link href="/">
-            <a>{formatDate(createdAt)}</a>
-          </Link>
+          <time dateTime={createdAt}>{createdAt.slice(0, 10)}</time>
         </div>
         <Chip tags={tags} />
       </div>

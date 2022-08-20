@@ -22,6 +22,7 @@ const Home: NextPage<MicroCMSListResponse<Blog>> = ({ contents }) => {
         {contents.map(({ id, title, tags, thumbnail, createdAt }) => (
           <BlogCard
             key={id}
+            id={id}
             title={title}
             tags={tags}
             thumbnail={thumbnail}

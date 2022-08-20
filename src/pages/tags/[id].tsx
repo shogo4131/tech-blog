@@ -46,6 +46,7 @@ const Tags: NextPage<Props> = ({ contents, tag }) => {
           {contents.map(({ id, title, tags, thumbnail, createdAt }) => (
             <BlogCard
               key={id}
+              id={id}
               title={title}
               tags={tags}
               thumbnail={thumbnail}
