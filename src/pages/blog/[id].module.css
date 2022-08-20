@@ -1,0 +1,27 @@
+.header {
+  margin-top: 20px;
+}
+
+.title {
+  margin-bottom: 10px;
+  color: var(--color-gray-500);
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.datetime {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--color-gray-200);
+  font-size: 12px;
+}
+
+.datetime > time {
+  margin-left: 4px;
+}
+
+.thumbnail {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
