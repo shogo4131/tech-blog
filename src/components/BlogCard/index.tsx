@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { Chip } from '@/components/Chip';
 import type { Blog } from '@/types/api';
 
+import { page } from '../../constants/page';
+
 import styles from './index.module.css';
 
 type Props = Pick<Blog, 'id' | 'title' | 'thumbnail' | 'tags' | 'createdAt'>;
@@ -23,7 +25,7 @@ export const BlogCard: FC<Props> = ({ id, title, thumbnail, tags, createdAt }) =
       </div>
       <div className={styles.title}>
         <h3>
-          <Link href={`/blog/${id}`}>
+          <Link href={`${page.blog.url}/${id}`}>
             <a>{title}</a>
           </Link>
         </h3>

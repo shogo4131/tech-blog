@@ -8,6 +8,8 @@ import { Layout } from '@/components/Layout';
 import { client } from '@/lib/client';
 import { Blog, BlogResponseData, BlogDetailResponseData } from '@/types/api';
 
+import { page } from '../../constants/page';
+
 import styles from './[id].module.css';
 
 const BlogDetail: NextPage<Blog> = ({
@@ -24,12 +26,12 @@ const BlogDetail: NextPage<Blog> = ({
     () => [
       {
         id: 1,
-        href: '/',
+        href: page.top.url,
         label: 'トップ',
       },
       {
         id: 2,
-        href: `/${id}`,
+        href: `${page.category.url}/${id}`,
         label: category.toString(),
       },
       {

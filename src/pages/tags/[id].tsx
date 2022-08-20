@@ -11,6 +11,7 @@ import { Layout } from '@/components/Layout';
 import { client } from '@/lib/client';
 import type { TagResponseData, BlogResponseData, Blog } from '@/types/api';
 
+import { page } from '../../constants/page';
 import styles from '../index.module.css';
 
 type Props = {
@@ -27,7 +28,7 @@ const Tags: NextPage<Props> = ({ contents, tag }) => {
     () => [
       {
         id: 1,
-        href: '/',
+        href: page.top.url,
         label: 'トップ',
       },
       {

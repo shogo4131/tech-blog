@@ -8,12 +8,14 @@ import { Layout } from '@/components/Layout';
 import { client } from '@/lib/client';
 import { Category, CategoryResponseData } from '@/types/api';
 
+import { page } from '../../constants/page';
+
 import styles from './index.module.css';
 
 const breadCrumbs: Crumbs[] = [
   {
     id: 1,
-    href: '/',
+    href: page.top.url,
     label: 'トップ',
   },
   {
@@ -32,13 +34,13 @@ const Sitemap: NextPage<{ contents: Category[] }> = ({ contents }) => {
           {contents.map(({ id, category, post }) => (
             <Fragment key={id}>
               <li className={styles.category}>
-                <Link href={`/category/${id}`}>
+                <Link href={`${page.category.url}/${id}`}>
                   <a>{category}</a>
                 </Link>
               </li>
               {post.map(({ id, title }) => (
                 <li key={id} className={styles.blogTitle}>
-                  <Link href={`/blog/${id}`}>
+                  <Link href={`${page.blog.url}/${id}`}>
                     <a>{title}</a>
                   </Link>
                 </li>

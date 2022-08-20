@@ -3,12 +3,14 @@ import type { NextPage } from 'next';
 import { BreadCrumb, Crumbs } from '@/components/BreadCrumb';
 import { Layout } from '@/components/Layout';
 
+import { page } from '../../constants/page';
+
 import styles from './index.module.css';
 
 const breadCrumbs: Crumbs[] = [
   {
     id: 1,
-    href: '/',
+    href: page.top.url,
     label: 'トップ',
   },
   {
