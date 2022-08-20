@@ -18,7 +18,10 @@ export type Blog = {
   updatedAt: string;
   publishedAt: string;
   revisedAt: string;
+  description: string;
 };
+
+export type BlogDetailResponseData = Pick<BlogResponseData, 'contents' | 'totalCount'>;
 
 type Thumbnail = {
   url: string;
