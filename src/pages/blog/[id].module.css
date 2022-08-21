@@ -1,3 +1,7 @@
+.root {
+  max-width: 920px;
+}
+
 .header {
   margin-top: 20px;
 }

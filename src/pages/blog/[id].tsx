@@ -2,6 +2,10 @@ import { useMemo } from 'react';
 
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
+import cheerio from 'cheerio';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/night-owl.css';
+
 import { BreadCrumb, Crumbs } from '@/components/BreadCrumb';
 import { Chip } from '@/components/Chip';
 import { Layout } from '@/components/Layout';
@@ -15,7 +19,7 @@ import styles from './[id].module.css';
 const BlogDetail: NextPage<Blog> = ({
   id,
   title,
-  //   body,
+  body,
   thumbnail,
   tags,
   category,
@@ -44,7 +48,7 @@ const BlogDetail: NextPage<Blog> = ({
 
   return (
     <Layout>
-      <div>
+      <article className={styles.root}>
         <BreadCrumb items={breadCrumbs} />
         <div className={styles.header}>
           <h1 className={styles.title}>{title}</h1>
@@ -61,7 +65,8 @@ const BlogDetail: NextPage<Blog> = ({
             className={styles.thumbnail}
           />
         </div>
-      </div>
+        <div dangerouslySetInnerHTML={{ __html: body }} />
+      </article>
     </Layout>
   );
 };
@@ -85,11 +90,18 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     queries: { ids: id },
   });
 
+  const $ = cheerio.load(contents[0].body);
+  $('pre code').each((_, elm) => {
+    const result = hljs.highlightAuto($(elm).text());
+    $(elm).html(result.value);
+    $(elm).addClass('hljs');
+  });
+
   return {
     props: {
       id: contents[0].id,
       title: contents[0].title,
-      body: contents[0].body,
+      body: $.html(),
       createdAt: contents[0].createdAt,
       tags: contents[0].tags,
       thumbnail: contents[0].thumbnail,
