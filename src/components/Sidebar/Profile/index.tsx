@@ -2,6 +2,8 @@ import { FC } from 'react';
 
 import Link from 'next/link';
 
+import { page } from '../../../constants/page';
+
 import styles from './index.module.css';
 
 export const Profile: FC = () => {
@@ -24,7 +26,7 @@ export const Profile: FC = () => {
           <p>勉強会の講師もしてます。</p>
           <p>
             詳細は
-            <Link href="/">
+            <Link href={page.profile.url}>
               <a className={styles.profileDetail}>
                 こちら
                 <img
