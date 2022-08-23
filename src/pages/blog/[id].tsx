@@ -1,5 +1,3 @@
-import { useMemo } from 'react';
-
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
 import cheerio from 'cheerio';
@@ -26,25 +24,22 @@ const BlogDetail: NextPage<Blog> = ({
   createdAt,
   //   description,
 }) => {
-  const breadCrumbs: Crumbs[] = useMemo(
-    () => [
-      {
-        id: 1,
-        href: page.top.url,
-        label: 'トップ',
-      },
-      {
-        id: 2,
-        href: `${page.category.url}/${id}`,
-        label: category.toString(),
-      },
-      {
-        id: 3,
-        label: title,
-      },
-    ],
-    [category, id, title]
-  );
+  const breadCrumbs: Crumbs[] = [
+    {
+      id: 1,
+      href: page.top.url,
+      label: 'トップ',
+    },
+    {
+      id: 2,
+      href: `${page.category.url}/${id}`,
+      label: category.toString(),
+    },
+    {
+      id: 3,
+      label: title,
+    },
+  ];
 
   return (
     <Layout>

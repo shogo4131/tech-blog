@@ -1,5 +1,3 @@
-import { useMemo } from 'react';
-
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
 import clsx from 'clsx';
@@ -25,20 +23,17 @@ const Category: NextPage<Props> = ({ contents, category }) => {
   const xl = useMedia({ maxWidth: '1200px' });
   const sm = useMedia({ maxWidth: '540px' });
 
-  const breadCrumbs: Crumbs[] = useMemo(
-    () => [
-      {
-        id: 1,
-        href: page.top.url,
-        label: 'トップ',
-      },
-      {
-        id: 2,
-        label: category,
-      },
-    ],
-    [category]
-  );
+  const breadCrumbs: Crumbs[] = [
+    {
+      id: 1,
+      href: page.top.url,
+      label: 'トップ',
+    },
+    {
+      id: 2,
+      label: category,
+    },
+  ];
 
   return (
     <Layout>

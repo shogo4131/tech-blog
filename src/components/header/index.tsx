@@ -25,21 +25,15 @@ const headerLinks = [
 export const Header: FC = () => {
   const { asPath } = useRouter();
 
+  const headerTitle = (
+    <Link href={page.top.url}>
+      <a title="Reactおじさんブログ">Reactおじさんブログ</a>
+    </Link>
+  );
+
   return (
     <header className={styles.root}>
-      {page.top.url === asPath ? (
-        <h1>
-          <Link href={page.top.url}>
-            <a title="Reactおじさんブログ">Reactおじさんブログ</a>
-          </Link>
-        </h1>
-      ) : (
-        <div>
-          <Link href={page.top.url}>
-            <a title="Reactおじさんブログ">Reactおじさんブログ</a>
-          </Link>
-        </div>
-      )}
+      {page.top.url === asPath ? <h1>{headerTitle}</h1> : <div>{headerTitle}</div>}
       <ul className={styles.headerBanner}>
         {headerLinks.map(({ title, url, imagePath, alt }) => (
           <li key={title}>
