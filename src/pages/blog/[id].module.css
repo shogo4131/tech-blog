@@ -29,3 +29,62 @@
   height: auto;
   margin-top: 10px;
 }
+
+.blog h2 {
+  padding: 12px 20px;
+  margin: 28px 0 16px;
+  background-color: var(--color-gray-500);
+  color: var(--color-white);
+}
+
+.blog h3 {
+  padding: 8px 0;
+  border-bottom: 0.5px solid var(--color-gray-200);
+  margin: 12px 0;
+  font-size: 16px;
+}
+
+.blog a {
+  color: var(--color-blue-300);
+}
+
+.blog p {
+  font-size: 14px;
+  line-height: 28px;
+}
+
+.blog p > code {
+  padding: 4px;
+  background-color: var(--color-white-100);
+}
+
+.blog pre > code {
+  margin: 8px 0;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.blog ul {
+  padding: 20px;
+  margin: 8px 0;
+  background-color: var(--color-white-100);
+}
+
+.blog ol {
+  padding: 20px;
+  margin: 8px 0;
+  background-color: var(--color-white-100);
+}
+
+.blog ol > li {
+  margin-left: 20px;
+  font-size: 14px;
+  line-height: 28px;
+  list-style: decimal;
+}
+
+.blog ul > li {
+  font-size: 14px;
+  line-height: 28px;
+  list-style: inside;
+}

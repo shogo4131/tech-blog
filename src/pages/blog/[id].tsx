@@ -4,7 +4,7 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
 import cheerio from 'cheerio';
 import hljs from 'highlight.js';
-import 'highlight.js/styles/night-owl.css';
+import 'highlight.js/styles/base16/horizon-dark.css';
 
 import { BreadCrumb, Crumbs } from '@/components/BreadCrumb';
 import { Chip } from '@/components/Chip';
@@ -65,7 +65,7 @@ const BlogDetail: NextPage<Blog> = ({
             className={styles.thumbnail}
           />
         </div>
-        <div dangerouslySetInnerHTML={{ __html: body }} />
+        <div dangerouslySetInnerHTML={{ __html: body }} className={styles.blog} />
       </article>
     </Layout>
   );
