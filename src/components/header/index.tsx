@@ -1,6 +1,9 @@
 import { FC } from 'react';
 
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+
+import { page } from '../../constants/page';
 
 import styles from './index.module.css';
 
@@ -19,16 +22,24 @@ const headerLinks = [
   },
 ] as const;
 
-// TODO:  top画面と他にいった時にh1, divタグを入れ替える
-// sitemap icon追加
 export const Header: FC = () => {
+  const { asPath } = useRouter();
+
   return (
     <header className={styles.root}>
-      <h1>
-        <Link href="/">
-          <a title="Reactおじさんブログ">Reactおじさんブログ</a>
-        </Link>
-      </h1>
+      {page.top.url === asPath ? (
+        <h1>
+          <Link href={page.top.url}>
+            <a title="Reactおじさんブログ">Reactおじさんブログ</a>
+          </Link>
+        </h1>
+      ) : (
+        <div>
+          <Link href={page.top.url}>
+            <a title="Reactおじさんブログ">Reactおじさんブログ</a>
+          </Link>
+        </div>
+      )}
       <ul className={styles.headerBanner}>
         {headerLinks.map(({ title, url, imagePath, alt }) => (
           <li key={title}>
