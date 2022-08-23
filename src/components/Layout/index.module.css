@@ -1,4 +1,12 @@
 .root {
+  display: flex;
+  width: 100%;
   height: auto;
+  justify-content: space-around;
   padding: 20px 48px 30px;
+}
+
+.mobile {
+  display: block;
+  padding: 20px 12px 30px;
 }

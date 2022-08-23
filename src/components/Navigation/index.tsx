@@ -2,33 +2,31 @@ import { FC } from 'react';
 
 import Link from 'next/link';
 
+import { page } from '../../constants/page';
+
 import styles from './index.module.css';
 
+// TODO: リンクをidから戻す
 const navigationHeaders = [
   {
     title: 'フロントエンド',
     subtitle: 'Front end',
-    href: '/category/frontend',
+    href: `${page.category.url}/g2q9m1g39`,
   },
   {
     title: 'バックエンド',
     subtitle: 'Back end',
-    href: '/category/backend',
+    href: `${page.category.url}/monnb9cn3`,
   },
   {
     title: 'その他',
     subtitle: 'Others',
-    href: '/category/othner',
+    href: `${page.category.url}/toh-fmhx_u`,
   },
   {
     title: 'サイトマップ',
     subtitle: 'Site map',
-    href: '/sitemap',
-  },
-  {
-    title: 'お問合せ',
-    subtitle: 'Contract',
-    href: '/contract',
+    href: `${page.sitemap.url}`,
   },
 ] as const;
 

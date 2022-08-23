@@ -2,44 +2,39 @@ import { FC } from 'react';
 
 import Link from 'next/link';
 
+import { Chip } from '@/components/Chip';
+import type { Blog } from '@/types/api';
+
+import { page } from '../../constants/page';
+
 import styles from './index.module.css';
 
-type Props = {
-  image: string;
-  tags: string[];
-  title: string;
-};
+type Props = Pick<Blog, 'id' | 'title' | 'thumbnail' | 'tags' | 'createdAt'>;
 
-// TODO: APIの方が決まり次第修正
-// TODO: 画像の最小値設定
-export const BlogCard: FC<Props> = ({ image, tags, title }) => {
+export const BlogCard: FC<Props> = ({ id, title, thumbnail, tags, createdAt }) => {
   return (
     <div className={styles.root}>
       <div>
-        <img src={image} alt="thumbnail" className={styles.thumbnail} />
+        <img
+          src={thumbnail.url}
+          height={600}
+          width={1200}
+          alt="thumbnail"
+          className={styles.thumbnail}
+        />
       </div>
       <div className={styles.title}>
         <h3>
-          <Link href="/">
+          <Link href={`${page.blog.url}/${id}`}>
             <a>{title}</a>
           </Link>
         </h3>
       </div>
       <div className={styles.content}>
         <div className={styles.date}>
-          <Link href="/">
-            <a>2022/07/20</a>
-          </Link>
+          <time dateTime={createdAt}>{createdAt.slice(0, 10)}</time>
         </div>
-        <div className={styles.tags}>
-          {tags.map((tag) => (
-            <span className={styles.tag} key={tag}>
-              <Link href="/">
-                <a>{tag}</a>
-              </Link>
-            </span>
-          ))}
-        </div>
+        <Chip tags={tags} />
       </div>
     </div>
   );

@@ -1,0 +1,25 @@
+.root {
+  width: 100%;
+  max-width: 820px;
+}
+
+.title {
+  margin-top: 32px;
+  color: var(--color-gray-500);
+  font-size: 24px;
+}
+
+.contents {
+  margin-top: 40px;
+  color: var(--color-blue-600);
+}
+
+.category {
+  margin: 16px 0;
+  font-size: 20px;
+}
+
+.blogTitle {
+  line-height: 32px;
+  text-indent: 20px;
+}

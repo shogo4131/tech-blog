@@ -31,10 +31,12 @@ export const InputFiled: FC<Props> = ({
   return (
     <label className={className}>
       <div className={styles.wrapper}>
-        <div className={clsx(styles.label, labelClassName)}>
-          {label && <span className={styles.title}>{label}</span>}
-          {required && <span className={styles.required}>必須</span>}
-        </div>
+        {label && (
+          <div className={clsx(styles.label, labelClassName)}>
+            <span className={styles.title}>{label}</span>
+            {required && <span className={styles.required}>必須</span>}
+          </div>
+        )}
         <div className={clsx(styles.inputWrapper, wrapperClassName)}>
           <input {...rest} className={clsx(styles.input, inputClassName)} onChange={onChange} />
           {surffixIcon && (

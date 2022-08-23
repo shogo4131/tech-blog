@@ -8,8 +8,30 @@ export default {
 
 export const Default: ComponentStoryObj<typeof BlogCard> = {
   args: {
-    image: '/react.png',
-    tags: ['React', 'AWS', 'AWS', 'AWS', 'AWS'],
+    thumbnail: {
+      url: '/react.png',
+      width: 0,
+      height: 0,
+    },
+    tags: [
+      {
+        tag: 'React',
+        id: '1',
+        createdAt: '',
+        publishedAt: '',
+        updatedAt: '',
+        revisedAt: '',
+      },
+      {
+        tag: 'AWS',
+        id: '1',
+        createdAt: '',
+        publishedAt: '',
+        updatedAt: '',
+        revisedAt: '',
+      },
+    ],
     title: 'Reactエンジニアによる状態管理とは',
+    createdAt: '2022-05-12T12:10:02.459Z',
   },
 };

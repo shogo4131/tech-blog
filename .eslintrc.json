@@ -1,6 +1,7 @@
 {
   "parser": "@typescript-eslint/parser",
   "plugins": ["import", "@typescript-eslint", "prettier"],
+  "ignorePatterns": ["*.config.js", "*.setup.js", "*.js"],
   "extends": [
     "eslint:recommended",
     "next",

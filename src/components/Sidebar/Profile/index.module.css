@@ -1,0 +1,37 @@
+.root {
+  margin-top: 32px;
+  color: var(--color-gray-200);
+}
+
+.title {
+  display: flex;
+  font-size: 14px;
+}
+
+.profile {
+  margin-left: 12px;
+}
+
+.profile > span {
+  font-size: 10px;
+}
+
+.profileContent {
+  display: flex;
+  margin-top: 12px;
+}
+
+.profileText {
+  margin-left: 12px;
+  font-size: 12px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.profileDetail {
+  color: var(--color-blue-300);
+}
+
+.arrowIcon {
+  vertical-align: text-bottom;
+}

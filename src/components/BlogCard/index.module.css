@@ -1,3 +1,7 @@
+.root {
+  margin-bottom: 36px;
+}
+
 .thumbnail {
   width: 100%;
   height: auto;
@@ -6,7 +10,7 @@
 .title {
   margin: 8px 0;
   color: var(--color-gray-500);
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -18,7 +22,7 @@
 .date {
   margin-right: 8px;
   color: var(--color-gray-200);
-  font-size: 16px;
+  font-size: 10px;
 }
 
 .tags {
@@ -33,6 +37,7 @@
   background-color: var(--color-gray-500);
   border-radius: 4px;
   color: var(--color-white);
+  cursor: pointer;
   line-height: 12px;
 }
 
