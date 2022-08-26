@@ -26,7 +26,7 @@ const Tags: NextPage<Props> = ({ contents, tag }) => {
     {
       id: 1,
       href: page.top.url,
-      label: 'トップ',
+      label: page.top.title,
     },
     {
       id: 2,

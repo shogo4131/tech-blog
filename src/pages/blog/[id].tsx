@@ -28,7 +28,7 @@ const BlogDetail: NextPage<Blog> = ({
     {
       id: 1,
       href: page.top.url,
-      label: 'トップ',
+      label: page.top.title,
     },
     {
       id: 2,

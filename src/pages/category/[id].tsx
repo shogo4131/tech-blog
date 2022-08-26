@@ -27,7 +27,7 @@ const Category: NextPage<Props> = ({ contents, category }) => {
     {
       id: 1,
       href: page.top.url,
-      label: 'トップ',
+      label: page.top.title,
     },
     {
       id: 2,

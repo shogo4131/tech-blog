@@ -16,11 +16,11 @@ const breadCrumbs: Crumbs[] = [
   {
     id: 1,
     href: page.top.url,
-    label: 'トップ',
+    label: page.top.title,
   },
   {
     id: 2,
-    label: 'サイトマップ',
+    label: page.sitemap.title,
   },
 ];
 
@@ -29,7 +29,7 @@ const Sitemap: NextPage<{ contents: Category[] }> = ({ contents }) => {
     <Layout>
       <div className={styles.root}>
         <BreadCrumb items={breadCrumbs} />
-        <h1 className={styles.title}>サイトマップ</h1>
+        <h1 className={styles.title}>{page.sitemap.title}</h1>
         <ul className={styles.contents}>
           {contents.map(({ id, category, post }) => (
             <Fragment key={id}>

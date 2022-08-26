@@ -11,11 +11,11 @@ const breadCrumbs: Crumbs[] = [
   {
     id: 1,
     href: page.top.url,
-    label: 'トップ',
+    label: page.top.title,
   },
   {
     id: 2,
-    label: '免責事項・プライバシーポリシー',
+    label: page.privacy.title,
   },
 ];
 
@@ -24,7 +24,7 @@ const Privacy: NextPage = () => {
     <Layout>
       <div className={styles.root}>
         <BreadCrumb items={breadCrumbs} />
-        <h1 className={styles.title}>免責事項・プライバシーポリシー</h1>
+        <h1 className={styles.title}>{page.privacy.title}</h1>
         <div className={styles.contents}>
           <p>
             Reactおじさんブログ(https://react-uncle.netlify.app)(以下「当ブログ」)における免責事項・プライバシーポリシーを次の通り記載します。

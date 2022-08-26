@@ -12,11 +12,11 @@ const breadCrumbs: Crumbs[] = [
   {
     id: 1,
     href: page.top.url,
-    label: 'トップ',
+    label: page.top.title,
   },
   {
     id: 2,
-    label: 'プロフィール',
+    label: page.profile.title,
   },
 ];
 
@@ -25,7 +25,7 @@ const Profile: NextPage = () => {
     <Layout>
       <div className={styles.root}>
         <BreadCrumb items={breadCrumbs} />
-        <h1 className={styles.title}>プロフィール</h1>
+        <h1 className={styles.title}>{page.profile.title}</h1>
         <div className={styles.selfIntroduction}>
           <p>初めまして！！</p>
           <p>Reactおじさんです。</p>
