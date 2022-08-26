@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { Fragment, useCallback } from 'react';
+import { Fragment } from 'react';
 
 import { useRouter } from 'next/router';
 
@@ -21,12 +21,9 @@ export type Crumbs = {
 export const BreadCrumb: FC<Props> = ({ className, items }) => {
   const { push } = useRouter();
 
-  const onClickLinkHandler = useCallback(
-    (url?: string) => {
-      if (url) push(url);
-    },
-    [push]
-  );
+  const onClickLinkHandler = (url?: string) => {
+    if (url) push(url);
+  };
 
   return (
     <div className={clsx(styles.root, className)}>
@@ -44,8 +41,8 @@ export const BreadCrumb: FC<Props> = ({ className, items }) => {
               src="/images/arrow-right.svg"
               alt="arrow-right"
               className={styles.arrowRight}
-              height={14}
-              width={14}
+              height={16}
+              width={16}
             />
           )}
         </Fragment>

@@ -13,7 +13,7 @@ export const CategoryList: FC = () => {
   return (
     <div className={styles.root}>
       <div className={styles.title}>
-        <img src="/images/category.svg" alt="カテゴリ一覧" height={30} width={30} />
+        <img src="/images/category.svg" alt="カテゴリ一覧" height={45} width={45} />
         <div className={styles.category}>
           <h4>カテゴリ一覧</h4>
           <span>Caterory Lists</span>

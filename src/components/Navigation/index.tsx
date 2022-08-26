@@ -10,12 +10,12 @@ import styles from './index.module.css';
 const navigationHeaders = [
   {
     title: 'フロントエンド',
-    subtitle: 'Front end',
+    subtitle: 'Frontend',
     href: `${page.category.url}/g2q9m1g39`,
   },
   {
     title: 'バックエンド',
-    subtitle: 'Back end',
+    subtitle: 'Backend',
     href: `${page.category.url}/monnb9cn3`,
   },
   {
@@ -25,7 +25,7 @@ const navigationHeaders = [
   },
   {
     title: 'サイトマップ',
-    subtitle: 'Site map',
+    subtitle: 'Sitemap',
     href: `${page.sitemap.url}`,
   },
 ] as const;

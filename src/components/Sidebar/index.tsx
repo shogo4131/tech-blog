@@ -27,6 +27,7 @@ export const Sidebar: FC<Props> = () => {
     <aside className={clsx(styles.root, { [styles.mobile]: isMobile })}>
       {!isMobile && (
         <InputFiled
+          inputClassName={styles.input}
           placeholder="検索"
           value={keyword}
           onChange={onChangeSearchHandler}
