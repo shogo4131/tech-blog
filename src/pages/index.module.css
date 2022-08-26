@@ -1,6 +1,7 @@
 .blogItem {
   display: grid;
-  gap: 10px;
+  max-width: 1280px;
+  gap: 16px;
   grid-template-columns: repeat(3, 1fr);
 }
 
@@ -8,7 +9,7 @@
   margin-bottom: 20px;
 }
 
-.xl {
+.lg {
   grid-template-columns: repeat(2, 1fr);
 }
 

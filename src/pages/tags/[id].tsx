@@ -1,7 +1,6 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
 import clsx from 'clsx';
-import { useMedia } from 'use-media';
 
 import { BlogCard } from '@/components/BlogCard';
 import { BreadCrumb, Crumbs } from '@/components/BreadCrumb';
@@ -10,6 +9,7 @@ import { client } from '@/lib/client';
 import type { TagResponseData, BlogResponseData, Blog } from '@/types/api';
 
 import { page } from '../../constants/page';
+import { useMediaQuery } from '../../hooks/useMediaQuery';
 import styles from '../index.module.css';
 
 type Props = {
@@ -19,8 +19,7 @@ type Props = {
 
 // TODO: retrun 以下を共通化する
 const Tags: NextPage<Props> = ({ contents, tag }) => {
-  const xl = useMedia({ maxWidth: '1200px' });
-  const sm = useMedia({ maxWidth: '540px' });
+  const { lg, sm } = useMediaQuery();
 
   const breadCrumbs: Crumbs[] = [
     {
@@ -38,7 +37,7 @@ const Tags: NextPage<Props> = ({ contents, tag }) => {
     <Layout>
       <article>
         <BreadCrumb items={breadCrumbs} className={styles.breadCrumb} />
-        <div className={clsx(styles.blogItem, { [styles.xl]: xl, [styles.sm]: sm })}>
+        <div className={clsx(styles.blogItem, { [styles.lg]: lg, [styles.sm]: sm })}>
           {contents.map(({ id, title, tags, thumbnail, createdAt }) => (
             <BlogCard
               key={id}
