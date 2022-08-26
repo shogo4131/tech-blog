@@ -1,12 +1,12 @@
 .root {
   display: flex;
-  height: 77px;
+  height: 88px;
   align-items: center;
   justify-content: space-between;
   padding: 16px 48px;
   background-color: var(--color-gray-500);
   color: var(--color-white);
-  font-size: 32px;
+  font-size: 2.8rem;
 }
 
 .headerBanner {

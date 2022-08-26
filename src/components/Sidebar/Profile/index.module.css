@@ -5,7 +5,9 @@
 
 .title {
   display: flex;
-  font-size: 14px;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
 }
 
 .profile {
@@ -13,7 +15,7 @@
 }
 
 .profile > span {
-  font-size: 10px;
+  font-size: 1.2rem;
 }
 
 .profileContent {
@@ -22,9 +24,9 @@
 }
 
 .profileText {
-  margin-left: 12px;
-  font-size: 12px;
-  line-height: 20px;
+  margin-left: 16px;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
   white-space: nowrap;
 }
 

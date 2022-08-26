@@ -3,13 +3,13 @@
 }
 
 .header {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .title {
   margin-bottom: 10px;
   color: var(--color-gray-500);
-  font-size: 28px;
+  font-size: 2.8rem;
   font-weight: 500;
 }
 
@@ -17,7 +17,7 @@
   display: block;
   margin-bottom: 10px;
   color: var(--color-gray-200);
-  font-size: 12px;
+  font-size: 1.4rem;
 }
 
 .datetime > time {
@@ -35,13 +35,14 @@
   margin: 28px 0 16px;
   background-color: var(--color-gray-500);
   color: var(--color-white);
+  font-size: 1.35rem;
 }
 
 .blog h3 {
   padding: 8px 0;
   border-bottom: 0.5px solid var(--color-gray-200);
   margin: 12px 0;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .blog a {
@@ -49,7 +50,7 @@
 }
 
 .blog p {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 28px;
 }
 
@@ -60,16 +61,11 @@
 
 .blog pre > code {
   margin: 8px 0;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 24px;
 }
 
-.blog ul {
-  padding: 20px;
-  margin: 8px 0;
-  background-color: var(--color-white-100);
-}
-
+.blog ul,
 .blog ol {
   padding: 20px;
   margin: 8px 0;
@@ -78,13 +74,13 @@
 
 .blog ol > li {
   margin-left: 20px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 28px;
   list-style: decimal;
 }
 
 .blog ul > li {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 28px;
   list-style: inside;
 }

@@ -5,3 +5,7 @@
 .mobile {
   margin-left: unset;
 }
+
+.input {
+  height: 48px;
+}

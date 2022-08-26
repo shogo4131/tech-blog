@@ -1,9 +1,8 @@
 .root {
   display: flex;
   width: 100%;
-  height: auto;
-  justify-content: space-around;
-  padding: 20px 48px 30px;
+  justify-content: space-between;
+  padding: 40px 48px 160px;
 }
 
 .mobile {
