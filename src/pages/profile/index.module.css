@@ -1,15 +1,16 @@
 .root {
   width: 100%;
-  max-width: 820px;
+  max-width: 920px;
 }
 
 .title {
   margin: 32px 0 20px;
   color: var(--color-gray-500);
-  font-size: 24px;
+  font-size: 2.4rem;
 }
 
 .selfIntroduction {
+  font-size: 1.6rem;
   line-height: 32px;
   text-indent: 5px;
 }
@@ -17,7 +18,7 @@
 .subTitle {
   margin-bottom: 12px;
   color: var(--color-gray-500);
-  font-size: 20px;
+  font-size: 2rem;
 }
 
 .skill {
@@ -35,6 +36,7 @@
 .front,
 .back {
   color: var(--color-gray-500);
+  font-size: 1.6rem;
 }
 
 .skillIcon {
