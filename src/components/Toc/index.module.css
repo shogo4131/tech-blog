@@ -1,0 +1,22 @@
+.root {
+  padding: 20px;
+  background-color: var(--color-white-100);
+}
+
+.toc {
+  font-size: 2rem;
+}
+
+.tocItem {
+  margin: 16px 0;
+  font-size: 1.6rem;
+  list-style: inside;
+}
+
+.tocItem:last-child {
+  margin-bottom: unset;
+}
+
+.indent {
+  text-indent: 28px;
+}
