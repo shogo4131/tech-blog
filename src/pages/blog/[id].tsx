@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
 import cheerio from 'cheerio';
@@ -7,14 +8,19 @@ import 'highlight.js/styles/base16/horizon-dark.css';
 import { BreadCrumb, Crumbs } from '@/components/BreadCrumb';
 import { Chip } from '@/components/Chip';
 import { Layout } from '@/components/Layout';
+import { Toc } from '@/components/Toc';
 import { client } from '@/lib/client';
-import { Blog, BlogResponseData, BlogDetailResponseData } from '@/types/api';
+import { Blog, BlogResponseData, BlogDetailResponseData, Toc as TocList } from '@/types/api';
 
 import { page } from '../../constants/page';
 
 import styles from './[id].module.css';
 
-const BlogDetail: NextPage<Blog> = ({
+type Props = {
+  toc: TocList[];
+} & Blog;
+
+const BlogDetail: NextPage<Props> = ({
   id,
   title,
   body,
@@ -22,6 +28,7 @@ const BlogDetail: NextPage<Blog> = ({
   tags,
   category,
   createdAt,
+  toc,
   //   description,
 }) => {
   const breadCrumbs: Crumbs[] = [
@@ -60,6 +67,7 @@ const BlogDetail: NextPage<Blog> = ({
             className={styles.thumbnail}
           />
         </div>
+        <Toc toc={toc} className={styles.toc} />
         <div dangerouslySetInnerHTML={{ __html: body }} className={styles.blog} />
       </article>
     </Layout>
@@ -85,11 +93,21 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     queries: { ids: id },
   });
 
-  const $ = cheerio.load(contents[0].body);
+  const $ = cheerio.load(contents[0].body, { _useHtmlParser2: true });
   $('pre code').each((_, elm) => {
     const result = hljs.highlightAuto($(elm).text());
     $(elm).html(result.value);
     $(elm).addClass('hljs');
+  });
+
+  const headding = $('h2, h3').toArray();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const toc = headding.map((data: any) => {
+    return {
+      id: data.attribs.id,
+      text: data.children[0].data ? data.children[0].data : '',
+      tag: data.name ? data.name : '',
+    };
   });
 
   return {
@@ -102,6 +120,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
       thumbnail: contents[0].thumbnail,
       category: contents[0].category[0].category,
       description: contents[0].description,
+      toc,
     },
   };
 };
