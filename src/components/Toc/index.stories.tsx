@@ -9,10 +9,10 @@ export default {
 export const Default: ComponentStoryObj<typeof Toc> = {
   args: {
     toc: [
-      { text: 'レンダリングとは', tag: 'span' },
-      { text: 'Next.jsのレンダリングは？？', tag: 'h3' },
-      { text: 'Next.jsとは', tag: 'span' },
-      { text: 'サンプルコード', tag: 'span' },
+      { id: 0, text: 'レンダリングとは', tag: 'span' },
+      { id: 1, text: 'Next.jsのレンダリングは？？', tag: 'h3' },
+      { id: 2, text: 'Next.jsとは', tag: 'span' },
+      { id: 3, text: 'サンプルコード', tag: 'span' },
     ],
   },
 };
