@@ -24,6 +24,7 @@ export type Blog = {
 export type BlogDetailResponseData = Pick<BlogResponseData, 'contents' | 'totalCount'>;
 
 export type Toc = {
+  id: number;
   text: string;
   tag: string;
 };
