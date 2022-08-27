@@ -23,6 +23,11 @@ export type Blog = {
 
 export type BlogDetailResponseData = Pick<BlogResponseData, 'contents' | 'totalCount'>;
 
+export type Toc = {
+  text: string;
+  tag: string;
+};
+
 type Thumbnail = {
   url: string;
   height: number;
