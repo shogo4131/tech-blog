@@ -8,11 +8,12 @@ import 'highlight.js/styles/base16/horizon-dark.css';
 import { BreadCrumb, Crumbs } from '@/components/BreadCrumb';
 import { Chip } from '@/components/Chip';
 import { Layout } from '@/components/Layout';
+import { Seo } from '@/components/Seo';
 import { Toc } from '@/components/Toc';
 import { client } from '@/lib/client';
 import { Blog, BlogResponseData, BlogDetailResponseData, Toc as TocList } from '@/types/api';
 
-import { page } from '../../constants/page';
+import { page, seoContents } from '../../constants';
 
 import styles from './[id].module.css';
 
@@ -29,8 +30,11 @@ const BlogDetail: NextPage<Props> = ({
   category,
   createdAt,
   toc,
-  //   description,
+  description,
 }) => {
+  // TODO: urlをidからアルファベットに変更
+  const url = `${seoContents.siteUrl}${page.blog.url}/${title}`;
+
   const breadCrumbs: Crumbs[] = [
     {
       id: 1,
@@ -50,6 +54,7 @@ const BlogDetail: NextPage<Props> = ({
 
   return (
     <Layout>
+      <Seo title={`${title} | ${seoContents.blogTitle}`} description={description} url={url} />
       <article className={styles.root}>
         <BreadCrumb items={breadCrumbs} />
         <div className={styles.header}>

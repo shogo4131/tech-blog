@@ -2,8 +2,9 @@ import type { NextPage } from 'next';
 
 import { BreadCrumb, Crumbs } from '@/components/BreadCrumb';
 import { Layout } from '@/components/Layout';
+import { Seo } from '@/components/Seo';
 
-import { page } from '../../constants/page';
+import { page, seoContents } from '../../constants';
 
 import styles from './index.module.css';
 
@@ -20,8 +21,15 @@ const breadCrumbs: Crumbs[] = [
 ];
 
 const Privacy: NextPage = () => {
+  const { blogTitle, description, siteUrl } = seoContents;
+
   return (
     <Layout>
+      <Seo
+        title={`${page.privacy.title} | ${blogTitle}`}
+        description={description}
+        url={`${siteUrl}${page.privacy.url}`}
+      />
       <div className={styles.root}>
         <BreadCrumb items={breadCrumbs} />
         <h1 className={styles.title}>{page.privacy.title}</h1>

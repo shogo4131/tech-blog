@@ -5,10 +5,11 @@ import clsx from 'clsx';
 import { BlogCard } from '@/components/BlogCard';
 import { BreadCrumb, Crumbs } from '@/components/BreadCrumb';
 import { Layout } from '@/components/Layout';
+import { Seo } from '@/components/Seo';
 import { client } from '@/lib/client';
 import type { CategoryResponseData, BlogResponseData, Blog } from '@/types/api';
 
-import { page } from '../../constants/page';
+import { page, seoContents } from '../../constants';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 import styles from '../index.module.css';
 
@@ -21,6 +22,7 @@ type Props = {
 // TODO: URLをidから文字列に変更する
 const Category: NextPage<Props> = ({ contents, category }) => {
   const { lg, sm } = useMediaQuery();
+  const url = `${seoContents.siteUrl}${page.category.url}/${category}`;
 
   const breadCrumbs: Crumbs[] = [
     {
@@ -36,6 +38,11 @@ const Category: NextPage<Props> = ({ contents, category }) => {
 
   return (
     <Layout>
+      <Seo
+        title={`${category} | ${seoContents.blogTitle}`}
+        description={seoContents.description}
+        url={url}
+      />
       <article>
         <BreadCrumb items={breadCrumbs} className={styles.breadCrumb} />
         <div className={clsx(styles.blogItem, { [styles.lg]: lg, [styles.sm]: sm })}>
