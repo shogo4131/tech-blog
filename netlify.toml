@@ -1,7 +1,0 @@
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-
-[build]
-  command = "yarn build"
-  publish = "out"
-  functions = 'out_functions'
