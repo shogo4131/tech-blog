@@ -2,6 +2,7 @@
   package = "@netlify/plugin-nextjs"
 
 [build]
-  base = "./"
   command = "yarn build"
   publish = ".next"
+  functions = 'out_functions'
+  
