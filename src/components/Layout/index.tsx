@@ -3,7 +3,7 @@ import { FC, ReactNode, useCallback, useEffect, useState } from 'react';
 import clsx from 'clsx';
 
 import { Button } from '@/components/Button';
-import { Footer } from '@/components/Footer';
+// import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { Navigation } from '@/components/Navigation';
 import { Sidebar } from '@/components/Sidebar';
@@ -48,7 +48,7 @@ export const Layout: FC<Props> = ({ className, children }) => {
         {children}
         <Sidebar />
       </main>
-      <Footer />
+      {/* <Footer /> */}
       {/* TODO: スクロールボタンのデザイン変更する */}
       <Button
         type="button"
