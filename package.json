@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev && node createData.js",
-    "build": "next build && node createData.js && next export && next-sitemap --config next-sitemap.config.js",
+    "build": "next build && && next export && node createData.js && next export && next-sitemap --config next-sitemap.config.js",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
