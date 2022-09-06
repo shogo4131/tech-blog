@@ -1,7 +1,7 @@
 # ビルドの設定
 [build]
-  command = 'yarn build'
-  publish = 'out'
+  command = 'npm run build && npm run export'
+  publish = '.next'
   functions = 'out_functions'
 
 # プラグインの設定
