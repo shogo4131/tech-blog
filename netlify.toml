@@ -1,9 +1,11 @@
-# ビルドの設定
 [build]
-  command = 'npm run build'
-  publish = '.next'
-  functions = 'out_functions'
+  command = "yarn build"
+  publish = ".next"
 
-# プラグインの設定
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"
