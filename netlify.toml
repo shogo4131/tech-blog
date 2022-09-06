@@ -1,0 +1,9 @@
+# ビルドの設定
+[build]
+  command = 'yarn build && yarn export'
+  publish = 'out'
+  functions = 'out_functions'
+
+# プラグインの設定
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
