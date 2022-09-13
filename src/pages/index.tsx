@@ -39,7 +39,7 @@ const Home: NextPage<MicroCMSListResponse<Blog>> = ({ contents }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const blog = await client.get<BlogResponseData>({ endpoint: 'blog' });
+  const blog = await client.get<BlogResponseData>({ endpoint: 'blog', queries: { limit: 9 } });
 
   return {
     props: {
