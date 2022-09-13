@@ -35,7 +35,7 @@ const Privacy: NextPage = () => {
         <h1 className={styles.title}>{page.privacy.title}</h1>
         <div className={styles.contents}>
           <p>
-            Reactおじさんブログ(https://react-uncle.netlify.app)(以下「当ブログ」)における免責事項・プライバシーポリシーを次の通り記載します。
+            Reactおじさんブログ(https://react-uncle-blog.netlify.app)(以下「当ブログ」)における免責事項・プライバシーポリシーを次の通り記載します。
           </p>
           <h2 className={styles.subtitle}>個人情報の利用目的について</h2>
           <p>
