@@ -11,14 +11,14 @@ type Props = {
   url: string;
 };
 
-// TODO: その他諸々必要なものを調べて追加する
-// TODO: image追加
+// TODO: og image追加
 export const Seo: FC<Props> = ({ title, description, url }) => {
   const { pathname } = useRouter();
 
   return (
     <Head>
       <title>{title}</title>
+      <meta name="theme-color" content="#ffffff" />
       <meta name="description" content={description} />
       <meta property="og:title" content={title} />
       <meta property="og:url" content={url} />
@@ -30,6 +30,8 @@ export const Seo: FC<Props> = ({ title, description, url }) => {
       <meta name="twitter:site" content="@react_nextjs" />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:title" content={title} />
+      <link rel="shortcut icon" href="/favicon.ico" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     </Head>
   );
 };
