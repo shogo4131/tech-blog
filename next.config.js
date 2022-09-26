@@ -4,4 +4,5 @@ module.exports = {
   reactStrictMode: true,
   ignoreBuildErrors: true,
   swcMinify: false,
+  target: 'serverless',
 };
