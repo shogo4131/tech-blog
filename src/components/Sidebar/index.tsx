@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useState } from 'react';
+import { FC, useState } from 'react';
 
 import clsx from 'clsx';
 
@@ -18,20 +18,21 @@ type Props = {
 // TODO:全文検索追加
 export const Sidebar: FC<Props> = () => {
   const { xl } = useMediaQuery();
-  const [keyword, setKeyWord] = useState('');
+  const [keyword] = useState('');
 
-  const onChangeSearchHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setKeyWord(e.target.value);
+  const onChangeSearchHandler = () => {
+    window.alert('準備中');
   };
 
   return (
     <aside className={clsx(styles.root, { [styles.xl]: xl })}>
       {!xl && (
         <InputFiled
+          readOnly
           inputClassName={styles.input}
           placeholder="検索"
           value={keyword}
-          onChange={onChangeSearchHandler}
+          onClick={onChangeSearchHandler}
           surffixIcon="/images/search.svg"
         />
       )}

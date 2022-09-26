@@ -13,7 +13,7 @@ type Props = {
   required?: boolean;
   label?: string;
   error?: string;
-  onChange: ChangeEventHandler<HTMLInputElement>;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
 } & Omit<ComponentProps<'input'>, 'onChange'>;
 
 export const InputFiled: FC<Props> = ({
