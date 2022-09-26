@@ -19,10 +19,10 @@ import styles from './[id].module.css';
 
 type Props = {
   toc: TocList[];
+  categoryId: string;
 } & Blog;
 
 const BlogDetail: NextPage<Props> = ({
-  id,
   title,
   body,
   thumbnail,
@@ -30,6 +30,7 @@ const BlogDetail: NextPage<Props> = ({
   category,
   createdAt,
   toc,
+  categoryId,
   description,
 }) => {
   // TODO: urlをidからアルファベットに変更
@@ -43,7 +44,7 @@ const BlogDetail: NextPage<Props> = ({
     },
     {
       id: 2,
-      href: `${page.category.url}/${id}`,
+      href: `${page.category.url}/${categoryId}`,
       label: category.toString(),
     },
     {
@@ -124,6 +125,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
       tags: contents[0].tags,
       thumbnail: contents[0].thumbnail,
       category: contents[0].category[0].category,
+      categoryId: contents[0].category[0].id,
       description: contents[0].description,
       toc,
     },
