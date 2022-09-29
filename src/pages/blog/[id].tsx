@@ -55,7 +55,12 @@ const BlogDetail: NextPage<Props> = ({
 
   return (
     <Layout>
-      <Seo title={`${title} | ${seoContents.blogTitle}`} description={description} url={url} />
+      <Seo
+        title={`${title} | ${seoContents.blogTitle}`}
+        description={description}
+        url={url}
+        image={thumbnail.url}
+      />
       <article className={styles.root}>
         <BreadCrumb items={breadCrumbs} />
         <div className={styles.header}>
