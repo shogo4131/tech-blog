@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import Link from 'next/link';
 
-import { page } from '../../constants/page';
+import { page, seoContents } from '../../constants';
 
 import styles from './index.module.css';
 
@@ -14,7 +14,9 @@ export const Footer: FC = () => {
           <a className={styles.privacy}>免責事項・プライバシーポリシー</a>
         </Link>
       </div>
-      <p className={styles.copyLight}>©︎ {new Date().getFullYear()} Reactおじさんブログ</p>
+      <p className={styles.copyLight}>
+        ©︎ {new Date().getFullYear()} {seoContents.blogTitle}
+      </p>
     </footer>
   );
 };

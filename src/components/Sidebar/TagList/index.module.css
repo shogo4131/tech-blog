@@ -5,7 +5,9 @@
 
 .title {
   display: flex;
-  font-size: 14px;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
 }
 
 .tag {
@@ -13,7 +15,7 @@
 }
 
 .tag > span {
-  font-size: 10px;
+  font-size: 1.2rem;
 }
 
 .contents {
@@ -21,5 +23,5 @@
 }
 
 .tagList {
-  margin-bottom: 4px;
+  margin: 0 6px 8px 0;
 }

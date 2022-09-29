@@ -2,23 +2,27 @@ import type { GetStaticProps, NextPage } from 'next';
 
 import clsx from 'clsx';
 import type { MicroCMSListResponse } from 'microcms-js-sdk';
-import { useMedia } from 'use-media';
 
 import { BlogCard } from '@/components/BlogCard';
 import { Layout } from '@/components/Layout';
+import { Seo } from '@/components/Seo';
 import { client } from '@/lib/client';
 import type { Blog, BlogResponseData } from '@/types/api';
 
+import { seoContents } from '../constants';
+import { useMediaQuery } from '../hooks/useMediaQuery';
+
 import styles from './index.module.css';
 
-// TODO: 画面サイズをconstantディレクトリに定義する
+// TODO: return以降を共通化
 const Home: NextPage<MicroCMSListResponse<Blog>> = ({ contents }) => {
-  const xl = useMedia({ maxWidth: '1200px' });
-  const sm = useMedia({ maxWidth: '540px' });
+  const { lg, sm } = useMediaQuery();
+  const { blogTitle, description, siteUrl } = seoContents;
 
   return (
     <Layout>
-      <article className={clsx(styles.blogItem, { [styles.xl]: xl, [styles.sm]: sm })}>
+      <Seo title={blogTitle} description={description} url={siteUrl} />
+      <article className={clsx(styles.blogItem, { [styles.lg]: lg, [styles.sm]: sm })}>
         {contents.map(({ id, title, tags, thumbnail, createdAt }) => (
           <BlogCard
             key={id}
@@ -35,7 +39,7 @@ const Home: NextPage<MicroCMSListResponse<Blog>> = ({ contents }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const blog = await client.get<BlogResponseData>({ endpoint: 'blog' });
+  const blog = await client.get<BlogResponseData>({ endpoint: 'blog', queries: { limit: 9 } });
 
   return {
     props: {

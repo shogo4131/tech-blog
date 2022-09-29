@@ -10,5 +10,6 @@
 
 .text {
   color: var(--color-gray-500);
-  line-height: 24px;
+  font-size: 1.6rem;
+  line-height: 3.2rem;
 }

@@ -5,10 +5,11 @@ import Link from 'next/link';
 
 import { BreadCrumb, Crumbs } from '@/components/BreadCrumb';
 import { Layout } from '@/components/Layout';
+import { Seo } from '@/components/Seo';
 import { client } from '@/lib/client';
 import { Category, CategoryResponseData } from '@/types/api';
 
-import { page } from '../../constants/page';
+import { page, seoContents } from '../../constants';
 
 import styles from './index.module.css';
 
@@ -16,20 +17,27 @@ const breadCrumbs: Crumbs[] = [
   {
     id: 1,
     href: page.top.url,
-    label: 'トップ',
+    label: page.top.title,
   },
   {
     id: 2,
-    label: 'サイトマップ',
+    label: page.sitemap.title,
   },
 ];
 
 const Sitemap: NextPage<{ contents: Category[] }> = ({ contents }) => {
+  const { blogTitle, description, siteUrl } = seoContents;
+
   return (
     <Layout>
+      <Seo
+        title={`${page.sitemap.title} | ${blogTitle}`}
+        description={description}
+        url={`${siteUrl}${page.sitemap.url}`}
+      />
       <div className={styles.root}>
         <BreadCrumb items={breadCrumbs} />
-        <h1 className={styles.title}>サイトマップ</h1>
+        <h1 className={styles.title}>{page.sitemap.title}</h1>
         <ul className={styles.contents}>
           {contents.map(({ id, category, post }) => (
             <Fragment key={id}>

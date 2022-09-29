@@ -21,9 +21,9 @@ export const Chip: FC<Props> = ({ className, tagClassName, tags }) => {
     <div className={clsx(styles.tags, className)}>
       {tags.map(({ id, tag }) => (
         <Link href={`${page.tags.url}/${id}`} key={id}>
-          <span className={clsx(styles.tag, tagClassName)}>
-            <a>{tag}</a>
-          </span>
+          <a className={clsx(styles.tag, tagClassName)}>
+            <span>{tag}</span>
+          </a>
         </Link>
       ))}
     </div>

@@ -37,6 +37,7 @@
   padding: 4px 12px;
   border: solid 1px var(--color-gray-200);
   border-radius: 8px;
+  font-size: 1.6rem;
 }
 
 .input:focus {
@@ -45,7 +46,6 @@
 
 .input::placeholder {
   color: var(--color-gray-100);
-  font-size: 14px;
 }
 
 .surffixIcon {

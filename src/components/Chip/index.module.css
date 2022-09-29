@@ -1,17 +1,17 @@
 .tags {
   display: flex;
   flex-wrap: wrap;
-  font-size: 10px;
+  font-size: 1.4rem;
 }
 
 .tag {
-  padding: 4px 8px;
+  padding: 8px 12px;
   margin-right: 4px;
   background-color: var(--color-gray-500);
   border-radius: 4px;
   color: var(--color-white);
   cursor: pointer;
-  line-height: 12px;
+  line-height: 1.4rem;
 }
 
 .tag:hover {

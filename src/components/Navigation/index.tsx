@@ -8,24 +8,24 @@ import styles from './index.module.css';
 
 // TODO: リンクをidから戻す
 const navigationHeaders = [
-  {
-    title: 'フロントエンド',
-    subtitle: 'Front end',
-    href: `${page.category.url}/g2q9m1g39`,
-  },
-  {
-    title: 'バックエンド',
-    subtitle: 'Back end',
-    href: `${page.category.url}/monnb9cn3`,
-  },
+  // {
+  //   title: 'フロントエンド',
+  //   subtitle: 'Frontend',
+  //   href: `${page.category.url}/g2q9m1g39`,
+  // },
+  // {
+  //   title: 'バックエンド',
+  //   subtitle: 'Backend',
+  //   href: `${page.category.url}/monnb9cn3`,
+  // },
   {
     title: 'その他',
     subtitle: 'Others',
-    href: `${page.category.url}/toh-fmhx_u`,
+    href: `${page.category.url}/r9rwntrnq_q`,
   },
   {
     title: 'サイトマップ',
-    subtitle: 'Site map',
+    subtitle: 'Sitemap',
     href: `${page.sitemap.url}`,
   },
 ] as const;

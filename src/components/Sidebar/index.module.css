@@ -1,7 +1,13 @@
 .root {
+  max-width: 320px;
   margin-left: 32px;
 }
 
-.mobile {
+.xl {
+  max-width: none;
   margin-left: unset;
+}
+
+.input {
+  height: 48px;
 }

@@ -1,17 +1,16 @@
-import { useMemo } from 'react';
-
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
 import clsx from 'clsx';
-import { useMedia } from 'use-media';
 
 import { BlogCard } from '@/components/BlogCard';
 import { BreadCrumb, Crumbs } from '@/components/BreadCrumb';
 import { Layout } from '@/components/Layout';
+import { Seo } from '@/components/Seo';
 import { client } from '@/lib/client';
 import type { TagResponseData, BlogResponseData, Blog } from '@/types/api';
 
-import { page } from '../../constants/page';
+import { page, seoContents } from '../../constants';
+import { useMediaQuery } from '../../hooks/useMediaQuery';
 import styles from '../index.module.css';
 
 type Props = {
@@ -19,31 +18,34 @@ type Props = {
   tag: string;
 };
 
+// TODO: urlをidからtagに変更
 // TODO: retrun 以下を共通化する
 const Tags: NextPage<Props> = ({ contents, tag }) => {
-  const xl = useMedia({ maxWidth: '1200px' });
-  const sm = useMedia({ maxWidth: '540px' });
+  const { lg, sm } = useMediaQuery();
+  const url = `${seoContents.siteUrl}${page.tags.url}/${tag}`;
 
-  const breadCrumbs: Crumbs[] = useMemo(
-    () => [
-      {
-        id: 1,
-        href: page.top.url,
-        label: 'トップ',
-      },
-      {
-        id: 2,
-        label: tag,
-      },
-    ],
-    [tag]
-  );
+  const breadCrumbs: Crumbs[] = [
+    {
+      id: 1,
+      href: page.top.url,
+      label: page.top.title,
+    },
+    {
+      id: 2,
+      label: tag,
+    },
+  ];
 
   return (
     <Layout>
+      <Seo
+        title={`${tag} | ${seoContents.blogTitle}`}
+        description={seoContents.description}
+        url={url}
+      />
       <article>
         <BreadCrumb items={breadCrumbs} className={styles.breadCrumb} />
-        <div className={clsx(styles.blogItem, { [styles.xl]: xl, [styles.sm]: sm })}>
+        <div className={clsx(styles.blogItem, { [styles.lg]: lg, [styles.sm]: sm })}>
           {contents.map(({ id, title, tags, thumbnail, createdAt }) => (
             <BlogCard
               key={id}

@@ -2,8 +2,9 @@ import type { NextPage } from 'next';
 
 import { BreadCrumb, Crumbs } from '@/components/BreadCrumb';
 import { Layout } from '@/components/Layout';
+import { Seo } from '@/components/Seo';
 
-import { page } from '../../constants/page';
+import { page, seoContents } from '../../constants';
 
 import styles from './index.module.css';
 
@@ -11,23 +12,30 @@ const breadCrumbs: Crumbs[] = [
   {
     id: 1,
     href: page.top.url,
-    label: 'トップ',
+    label: page.top.title,
   },
   {
     id: 2,
-    label: '免責事項・プライバシーポリシー',
+    label: page.privacy.title,
   },
 ];
 
 const Privacy: NextPage = () => {
+  const { blogTitle, description, siteUrl } = seoContents;
+
   return (
     <Layout>
+      <Seo
+        title={`${page.privacy.title} | ${blogTitle}`}
+        description={description}
+        url={`${siteUrl}${page.privacy.url}`}
+      />
       <div className={styles.root}>
         <BreadCrumb items={breadCrumbs} />
-        <h1 className={styles.title}>免責事項・プライバシーポリシー</h1>
+        <h1 className={styles.title}>{page.privacy.title}</h1>
         <div className={styles.contents}>
           <p>
-            Reactおじさんブログ(https://react-uncle.netlify.app)(以下「当ブログ」)における免責事項・プライバシーポリシーを次の通り記載します。
+            Reactおじさんブログ(https://react-uncle-blog.netlify.app)(以下「当ブログ」)における免責事項・プライバシーポリシーを次の通り記載します。
           </p>
           <h2 className={styles.subtitle}>個人情報の利用目的について</h2>
           <p>

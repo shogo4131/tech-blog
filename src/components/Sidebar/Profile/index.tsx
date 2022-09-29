@@ -10,7 +10,7 @@ export const Profile: FC = () => {
   return (
     <div className={styles.root}>
       <div className={styles.title}>
-        <img src="/images/profile.svg" alt="プロフィール" height={30} width={30} />
+        <img src="/images/profile.svg" alt="プロフィール" height={40} width={40} />
         <div className={styles.profile}>
           <h4>プロフィール</h4>
           <span>Profile</span>
@@ -18,7 +18,7 @@ export const Profile: FC = () => {
       </div>
       <div className={styles.profileContent}>
         <div className={styles.profileIcon}>
-          <img src="/images/postman.svg" alt="サムネイルアイコン" height={80} width={80} />
+          <img src="/images/postman.svg" alt="サムネイルアイコン" height={100} width={100} />
         </div>
         <div className={styles.profileText}>
           <p>Reactおじさんです。</p>
@@ -32,8 +32,8 @@ export const Profile: FC = () => {
                 <img
                   src="/images/arrow-right-blue.svg"
                   alt="プロフィール詳細"
-                  height={12}
-                  width={12}
+                  height={16}
+                  width={16}
                   className={styles.arrowIcon}
                 />
               </a>
