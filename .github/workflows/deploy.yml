@@ -21,7 +21,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: yarn build
     - name: Publish
-       uses: netlify/actions/cli@master
+       uses: netlify/actions/cli@main
        with:
          args: deploy --dir=public --prod
          env:
