@@ -11,12 +11,6 @@ import { useMediaQuery } from '../../hooks/useMediaQuery';
 import styles from './index.module.css';
 const headerLinks = [
   {
-    title: 'github',
-    url: 'https://github.com/shogo4131',
-    imagePath: '/images/github.svg',
-    alt: 'github',
-  },
-  {
     title: 'react',
     url: 'https://beta-reactjs-org-git-effects-fbopensource.vercel.app/',
     imagePath: '/images/react.svg',
