@@ -9,10 +9,11 @@ type Props = {
   title: string;
   description: string;
   url: string;
+  image?: string;
 };
 
-// TODO: og image追加
-export const Seo: FC<Props> = ({ title, description, url }) => {
+// TODO: ブログのogImageを作成してもらう
+export const Seo: FC<Props> = ({ title, description, url, image }) => {
   const { pathname } = useRouter();
 
   return (
@@ -21,6 +22,7 @@ export const Seo: FC<Props> = ({ title, description, url }) => {
       <meta name="theme-color" content="#ffffff" />
       <meta name="description" content={description} />
       <meta property="og:title" content={title} />
+      <meta property="og:image" content={image} />
       <meta property="og:url" content={url} />
       <meta property="og:site_name" content={seoContents.blogTitle} />
       <meta property="og:description" content={description} />
