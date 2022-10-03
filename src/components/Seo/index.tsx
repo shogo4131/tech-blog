@@ -32,6 +32,7 @@ export const Seo: FC<Props> = ({ title, description, url, image }) => {
       <meta name="twitter:site" content="@react_nextjs" />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:title" content={title} />
+      <meta name="twitter:image" content={image} />
       <link rel="icon" href="/favicon.ico" />
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     </Head>
