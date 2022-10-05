@@ -19,7 +19,6 @@ type Props = {
 };
 
 // TODO: retrun 以下を共通化する
-// TODO: URLをidから文字列に変更する
 const Category: NextPage<Props> = ({ contents, category }) => {
   const { lg, sm } = useMediaQuery();
   const url = `${seoContents.siteUrl}${page.category.url}/${category}`;
