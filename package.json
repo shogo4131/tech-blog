@@ -19,7 +19,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "axios": "^0.27.2",
+    "axios": "^1.0.0",
     "cheerio": "^1.0.0-rc.12",
     "clsx": "^1.1.1",
     "destyle.css": "^3.0.2",
