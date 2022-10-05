@@ -6,22 +6,21 @@ import { page } from '../../constants/page';
 
 import styles from './index.module.css';
 
-// TODO: リンクをidから戻す
 const navigationHeaders = [
   // {
   //   title: 'フロントエンド',
   //   subtitle: 'Frontend',
-  //   href: `${page.category.url}/g2q9m1g39`,
+  //   href: `${page.category.url}/frontend`,
   // },
   // {
   //   title: 'バックエンド',
   //   subtitle: 'Backend',
-  //   href: `${page.category.url}/monnb9cn3`,
+  //   href: `${page.category.url}/backend`,
   // },
   {
     title: 'その他',
     subtitle: 'Others',
-    href: `${page.category.url}/r9rwntrnq_q`,
+    href: `${page.category.url}/others`,
   },
   {
     title: 'サイトマップ',
