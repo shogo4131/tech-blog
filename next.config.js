@@ -5,3 +5,5 @@ const nextConfig = {
   ignoreBuildErrors: true,
   swcMinify: false,
 };
+
+module.exports = nextConfig;
