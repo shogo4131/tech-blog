@@ -1,10 +1,10 @@
-import NextDocument, { Html, Main, NextScript } from 'next/document';
+import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
 
-/* eslint-disable @next/next/next-script-for-ga */
 class Document extends NextDocument {
   render() {
     return (
       <Html lang="ja">
+        <Head />
         <body>
           <Main />
           <NextScript />
