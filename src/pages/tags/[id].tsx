@@ -18,7 +18,6 @@ type Props = {
   tag: string;
 };
 
-// TODO: urlをidからtagに変更
 // TODO: retrun 以下を共通化する
 const Tags: NextPage<Props> = ({ contents, tag }) => {
   const { lg, sm } = useMediaQuery();

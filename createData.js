@@ -1,5 +1,5 @@
 const fs = require('fs');
-const axios = require('axios').default;
+const axios = require('axios');
 require('dotenv').config();
 
 (async () => {
