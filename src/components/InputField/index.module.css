@@ -24,9 +24,9 @@
 
 .required {
   padding: 2px 4px;
+  border-radius: 4px;
   margin-left: 8px;
   background-color: var(--color-red-500);
-  border-radius: 4px;
   color: var(--color-white);
   font-size: 10px;
 }
