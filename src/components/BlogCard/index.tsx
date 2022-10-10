@@ -2,12 +2,15 @@ import { FC } from 'react';
 
 import Link from 'next/link';
 
-import { Chip } from '@/components/Chip';
 import type { Blog } from '@/types/api';
+
+import { Chip } from '@/components/Chip';
+
 
 import { page } from '../../constants/page';
 
 import styles from './index.module.css';
+
 
 type Props = Pick<Blog, 'id' | 'title' | 'thumbnail' | 'tags' | 'createdAt'>;
 
