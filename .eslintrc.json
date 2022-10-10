@@ -78,12 +78,17 @@
             "position": "before"
           },
           {
-            "pattern": "@/**",
+            "pattern": "@/components/**",
             "group": "internal",
             "position": "after"
           },
           {
-            "pattern": "./styles/**",
+            "pattern": "@/hooks/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "./inde./**",
             "group": "index",
             "position": "after"
           }
