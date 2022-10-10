@@ -34,7 +34,6 @@ const BlogDetail: NextPage<Props> = ({
   categoryId,
   description,
 }) => {
-  // TODO: urlをidからアルファベットに変更
   const url = `${seoContents.siteUrl}${page.blog.url}/${title}`;
 
   const breadCrumbs: Crumbs[] = [
