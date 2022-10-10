@@ -12,9 +12,9 @@ type Props = {
   image?: string;
 };
 
-// TODO: ブログのogImageを作成してもらう
 export const Seo: FC<Props> = ({ title, description, url, image }) => {
   const { pathname } = useRouter();
+  const { ogImage } = seoContents;
 
   return (
     <Head>
@@ -22,7 +22,7 @@ export const Seo: FC<Props> = ({ title, description, url, image }) => {
       <meta name="theme-color" content="#ffffff" />
       <meta name="description" content={description} />
       <meta property="og:title" content={title} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={pathname.includes(page.blog.url) ? image : ogImage} />
       <meta property="og:url" content={url} />
       <meta property="og:site_name" content={seoContents.blogTitle} />
       <meta property="og:description" content={description} />
@@ -32,7 +32,7 @@ export const Seo: FC<Props> = ({ title, description, url, image }) => {
       <meta name="twitter:site" content="@react_nextjs" />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:title" content={title} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={pathname.includes(page.blog.url) ? image : ogImage} />
       <link rel="icon" href="/favicon.ico" />
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     </Head>
