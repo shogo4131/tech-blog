@@ -9,6 +9,7 @@ import { page } from '../../constants/page';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 
 import styles from './index.module.css';
+
 const headerLinks = [
   {
     title: 'react',

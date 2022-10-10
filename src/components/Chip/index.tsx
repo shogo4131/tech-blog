@@ -4,13 +4,11 @@ import Link from 'next/link';
 
 import clsx from 'clsx';
 
-
 import { Tag } from '@/types/api';
 
 import { page } from '../../constants/page';
 
 import styles from './index.module.css';
-
 
 type Props = {
   className?: string;
