@@ -3,14 +3,16 @@ import type { GetStaticProps, NextPage } from 'next';
 import clsx from 'clsx';
 import type { MicroCMSListResponse } from 'microcms-js-sdk';
 
-import { BlogCard } from '@/components/BlogCard';
-import { Layout } from '@/components/Layout';
-import { Seo } from '@/components/Seo';
 import { client } from '@/lib/client';
 import type { Blog, BlogResponseData } from '@/types/api';
 
+import { BlogCard } from '@/components/BlogCard';
+import { Layout } from '@/components/Layout';
+import { Seo } from '@/components/Seo';
+
+import { useMediaQuery } from '@/hooks/useMediaQuery';
+
 import { seoContents } from '../constants';
-import { useMediaQuery } from '../hooks/useMediaQuery';
 
 import styles from './index.module.css';
 

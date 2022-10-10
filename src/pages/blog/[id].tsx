@@ -5,13 +5,14 @@ import cheerio from 'cheerio';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/base16/horizon-dark.css';
 
+import { client } from '@/lib/client';
+import { Blog, BlogResponseData, BlogDetailResponseData, Toc as TocList } from '@/types/api';
+
 import { BreadCrumb, Crumbs } from '@/components/BreadCrumb';
 import { Chip } from '@/components/Chip';
 import { Layout } from '@/components/Layout';
 import { Seo } from '@/components/Seo';
 import { Toc } from '@/components/Toc';
-import { client } from '@/lib/client';
-import { Blog, BlogResponseData, BlogDetailResponseData, Toc as TocList } from '@/types/api';
 
 import { page, seoContents } from '../../constants';
 
@@ -33,7 +34,6 @@ const BlogDetail: NextPage<Props> = ({
   categoryId,
   description,
 }) => {
-  // TODO: urlをidからアルファベットに変更
   const url = `${seoContents.siteUrl}${page.blog.url}/${title}`;
 
   const breadCrumbs: Crumbs[] = [

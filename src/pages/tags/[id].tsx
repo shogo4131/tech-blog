@@ -2,15 +2,17 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
 import clsx from 'clsx';
 
+import { client } from '@/lib/client';
+import type { TagResponseData, BlogResponseData, Blog } from '@/types/api';
+
 import { BlogCard } from '@/components/BlogCard';
 import { BreadCrumb, Crumbs } from '@/components/BreadCrumb';
 import { Layout } from '@/components/Layout';
 import { Seo } from '@/components/Seo';
-import { client } from '@/lib/client';
-import type { TagResponseData, BlogResponseData, Blog } from '@/types/api';
+
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 import { page, seoContents } from '../../constants';
-import { useMediaQuery } from '../../hooks/useMediaQuery';
 import styles from '../index.module.css';
 
 type Props = {

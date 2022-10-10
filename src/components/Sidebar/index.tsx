@@ -7,7 +7,7 @@ import { CategoryList } from '@/components/Sidebar/CategoryList';
 import { Profile } from '@/components/Sidebar/Profile';
 import { TagList } from '@/components/Sidebar/TagList';
 
-import { useMediaQuery } from '../../hooks/useMediaQuery';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 import styles from './index.module.css';
 

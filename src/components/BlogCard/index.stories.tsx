@@ -9,7 +9,7 @@ export default {
 export const Default: ComponentStoryObj<typeof BlogCard> = {
   args: {
     thumbnail: {
-      url: '/react.png',
+      url: '/og_image.webp',
       width: 0,
       height: 0,
     },

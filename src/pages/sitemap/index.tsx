@@ -3,11 +3,12 @@ import { Fragment } from 'react';
 import type { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
 
+import { client } from '@/lib/client';
+import { Category, CategoryResponseData } from '@/types/api';
+
 import { BreadCrumb, Crumbs } from '@/components/BreadCrumb';
 import { Layout } from '@/components/Layout';
 import { Seo } from '@/components/Seo';
-import { client } from '@/lib/client';
-import { Category, CategoryResponseData } from '@/types/api';
 
 import { page, seoContents } from '../../constants';
 
