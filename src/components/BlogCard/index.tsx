@@ -15,15 +15,17 @@ type Props = Pick<Blog, 'id' | 'title' | 'thumbnail' | 'tags' | 'createdAt'>;
 export const BlogCard: FC<Props> = ({ id, title, thumbnail, tags, createdAt }) => {
   return (
     <div className={styles.root}>
-      <div>
-        <img
-          src={thumbnail.url}
-          height={600}
-          width={1200}
-          alt="thumbnail"
-          className={styles.thumbnail}
-        />
-      </div>
+      <Link href={`${page.blog.url}/${id}`}>
+        <a>
+          <img
+            src={thumbnail.url}
+            height={600}
+            width={1200}
+            alt="thumbnail"
+            className={styles.thumbnail}
+          />
+        </a>
+      </Link>
       <div className={styles.title}>
         <h3>
           <Link href={`${page.blog.url}/${id}`}>

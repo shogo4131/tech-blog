@@ -10,14 +10,12 @@ import Script from 'next/script';
 import { pageview } from '@/lib/gtm';
 
 const App = ({ Component, pageProps }: AppProps) => {
-  const router = useRouter();
+  const { events } = useRouter();
 
   useEffect(() => {
-    router.events.on('routeChangeComplete', pageview);
-    return () => {
-      router.events.off('routeChangeComplete', pageview);
-    };
-  }, [router.events]);
+    events.on('routeChangeComplete', pageview);
+    return () => events.off('routeChangeComplete', pageview);
+  }, [events]);
 
   return (
     <>

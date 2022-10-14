@@ -1,5 +1,7 @@
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 
+import { seoContents } from 'constants/seo';
+
 import { BlogCard } from './index';
 
 export default {
@@ -9,7 +11,7 @@ export default {
 export const Default: ComponentStoryObj<typeof BlogCard> = {
   args: {
     thumbnail: {
-      url: '/og_image.webp',
+      url: seoContents.ogImage,
       width: 0,
       height: 0,
     },
