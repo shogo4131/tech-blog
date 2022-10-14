@@ -36,7 +36,7 @@
     "@netlify/plugin-nextjs": "^4.24.2",
     "@next/bundle-analyzer": "^12.2.4",
     "@storybook/addon-actions": "^6.5.9",
-    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/addon-essentials": "^6.5.12",
     "@storybook/addon-interactions": "^6.5.12",
     "@storybook/builder-webpack5": "^6.5.12",
     "@storybook/addon-links": "^6.5.12",
