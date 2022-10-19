@@ -20,7 +20,8 @@
 }
 
 .blogTitle {
+  padding-left: 1em;
   font-size: 1.6rem;
   line-height: 3.5rem;
-  text-indent: 20px;
+  text-indent: -0.1em;
 }
