@@ -88,6 +88,7 @@
 
 .blog ul > li {
   padding-left: 1em;
+  margin-left: 14px;
   font-size: 16px;
   line-height: 36px;
   list-style: inside;
