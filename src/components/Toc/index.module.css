@@ -8,9 +8,13 @@
 }
 
 .tocItem {
+  padding-left: 1em;
   margin: 16px 0;
   font-size: 1.6rem;
+  line-height: 21px;
   list-style: inside;
+  text-indent: -1.4em;
+  word-break: break-all;
 }
 
 .tocItem:last-child {
@@ -18,5 +22,6 @@
 }
 
 .indent {
-  text-indent: 28px;
+  padding-left: 2.7em;
+  text-indent: -1.4em;
 }

@@ -11,6 +11,7 @@
   color: var(--color-gray-500);
   font-size: 2.8rem;
   font-weight: 500;
+  line-height: 46px;
 }
 
 .datetime {
@@ -40,6 +41,7 @@
   background-color: var(--color-gray-500);
   color: var(--color-white);
   font-size: 2rem;
+  line-height: 35px;
 }
 
 .blog h3 {
@@ -55,7 +57,8 @@
 
 .blog p {
   font-size: 16px;
-  line-height: 28px;
+  line-height: 30px;
+  word-break: break-all;
 }
 
 .blog p > code {
@@ -78,13 +81,20 @@
 
 .blog ol > li {
   margin-left: 20px;
-  font-size: 16px;
-  line-height: 28px;
+  font-size: 1.6rem;
+  line-height: 36px;
   list-style: decimal;
 }
 
 .blog ul > li {
+  padding-left: 1em;
   font-size: 16px;
-  line-height: 28px;
+  line-height: 36px;
   list-style: inside;
+  text-indent: -1.4em;
+}
+
+.blog img {
+  width: 100%;
+  height: auto;
 }
