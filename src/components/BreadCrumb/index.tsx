@@ -30,10 +30,7 @@ export const BreadCrumb: FC<Props> = ({ className, items }) => {
       <img src="/images/home.svg" alt="home" className={styles.homeIcon} height={11} width={11} />
       {items.map(({ id, href, label }) => (
         <Fragment key={id}>
-          <div
-            className={clsx(styles.label, { [styles.cursol]: href })}
-            onClick={() => onClickLinkHandler(href)}
-          >
+          <div className={styles.label} onClick={() => onClickLinkHandler(href)}>
             {label}
           </div>
           {href && (

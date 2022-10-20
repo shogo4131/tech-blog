@@ -7,11 +7,11 @@ import { page } from '../../constants/page';
 import styles from './index.module.css';
 
 const navigationHeaders = [
-  // {
-  //   title: 'フロントエンド',
-  //   subtitle: 'Frontend',
-  //   href: `${page.category.url}/frontend`,
-  // },
+  {
+    title: 'フロントエンド',
+    subtitle: 'Frontend',
+    href: `${page.category.url}/frontend`,
+  },
   // {
   //   title: 'バックエンド',
   //   subtitle: 'Backend',

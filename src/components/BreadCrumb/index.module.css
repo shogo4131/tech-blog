@@ -16,6 +16,7 @@
 
 .label:not(:last-child) {
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .arrowRight {
