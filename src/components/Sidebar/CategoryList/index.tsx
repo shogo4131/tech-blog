@@ -22,9 +22,7 @@ export const CategoryList: FC = () => {
       <ul className={styles.contents}>
         {categories.map(({ id, category, post }) => (
           <li key={id} className={styles.item}>
-            <Link href={`${page.category.url}/${id}`}>
-              <a>{`${category}(${post.length})`}</a>
-            </Link>
+            <Link href={`${page.category.url}/${id}`}>{`${category}(${post.length})`}</Link>
           </li>
         ))}
       </ul>

@@ -26,17 +26,15 @@ export const Profile: FC = () => {
           <p>勉強会の講師もしてます。</p>
           <p>
             詳細は
-            <Link href={page.profile.url}>
-              <a className={styles.profileDetail}>
-                こちら
-                <img
-                  src="/images/arrow-right-blue.svg"
-                  alt="プロフィール詳細"
-                  height={16}
-                  width={16}
-                  className={styles.arrowIcon}
-                />
-              </a>
+            <Link href={page.profile.url} className={styles.profileDetail}>
+              <span>こちら</span>
+              <img
+                src="/images/arrow-right-blue.svg"
+                alt="プロフィール詳細"
+                height={16}
+                width={16}
+                className={styles.arrowIcon}
+              />
             </Link>
           </p>
         </div>

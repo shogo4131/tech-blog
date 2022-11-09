@@ -36,10 +36,8 @@ export const Navigation: FC = () => {
         {navigationHeaders.map(({ title, subtitle, href }) => (
           <li key={title}>
             <Link href={href}>
-              <a>
-                <p>{title}</p>
-                <p className={styles.subtitle}>{subtitle}</p>
-              </a>
+              <p>{title}</p>
+              <p className={styles.subtitle}>{subtitle}</p>
             </Link>
           </li>
         ))}
