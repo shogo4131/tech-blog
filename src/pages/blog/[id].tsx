@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
+import { useEffect } from 'react';
+
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
 import cheerio from 'cheerio';
@@ -52,6 +54,18 @@ const BlogDetail: NextPage<Props> = ({
       label: title,
     },
   ];
+
+  // NOTE: マウント後に動的にscriptタグを追加する
+  useEffect(() => {
+    const tweet = document.createElement('script');
+    tweet.setAttribute('src', 'https://platform.twitter.com/widgets.js');
+    tweet.setAttribute('defer', 'true');
+    document.body.appendChild(tweet);
+
+    return () => {
+      document.body.removeChild(tweet);
+    };
+  }, []);
 
   return (
     <Layout>
