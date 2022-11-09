@@ -24,8 +24,8 @@ export const Header: FC = () => {
   const { sm } = useMediaQuery();
 
   const headerTitle = (
-    <Link href={page.top.url}>
-      <a title="Reactおじさんブログ">Reactおじさんブログ</a>
+    <Link href={page.top.url} title="Reactおじさんブログ">
+      Reactおじさんブログ
     </Link>
   );
 

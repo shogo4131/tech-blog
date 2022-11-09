@@ -16,21 +16,17 @@ export const BlogCard: FC<Props> = ({ id, title, thumbnail, tags, createdAt }) =
   return (
     <div className={styles.root}>
       <Link href={`${page.blog.url}/${id}`}>
-        <a>
-          <img
-            src={thumbnail.url}
-            height={600}
-            width={1200}
-            alt="thumbnail"
-            className={styles.thumbnail}
-          />
-        </a>
+        <img
+          src={thumbnail.url}
+          height={600}
+          width={1200}
+          alt="thumbnail"
+          className={styles.thumbnail}
+        />
       </Link>
       <div className={styles.title}>
         <h3>
-          <Link href={`${page.blog.url}/${id}`}>
-            <a>{title}</a>
-          </Link>
+          <Link href={`${page.blog.url}/${id}`}>{title}</Link>
         </h3>
       </div>
       <div className={styles.content}>

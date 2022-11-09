@@ -43,15 +43,11 @@ const Sitemap: NextPage<{ contents: Category[] }> = ({ contents }) => {
           {contents.map(({ id, category, post }) => (
             <Fragment key={id}>
               <li className={styles.category}>
-                <Link href={`${page.category.url}/${id}`}>
-                  <a>{category}</a>
-                </Link>
+                <Link href={`${page.category.url}/${id}`}>{category}</Link>
               </li>
               {post.map(({ id, title }) => (
                 <li key={id} className={styles.blogTitle}>
-                  <Link href={`${page.blog.url}/${id}`}>
-                    <a>{title}</a>
-                  </Link>
+                  <Link href={`${page.blog.url}/${id}`}>{title}</Link>
                 </li>
               ))}
             </Fragment>

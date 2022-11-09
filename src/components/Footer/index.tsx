@@ -10,8 +10,8 @@ export const Footer: FC = () => {
   return (
     <footer className={styles.root}>
       <div>
-        <Link href={page.privacy.url}>
-          <a className={styles.privacy}>免責事項・プライバシーポリシー</a>
+        <Link href={page.privacy.url} className={styles.privacy}>
+          免責事項・プライバシーポリシー
         </Link>
       </div>
       <p className={styles.copyLight}>
