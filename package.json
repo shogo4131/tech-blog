@@ -37,7 +37,7 @@
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@netlify/plugin-nextjs": "^4.29.1",
-    "@next/bundle-analyzer": "^12.2.4",
+    "@next/bundle-analyzer": "^13.0.3",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.12",
     "@storybook/addon-interactions": "^6.5.13",
