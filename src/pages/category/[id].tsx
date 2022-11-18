@@ -1,6 +1,6 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 import { client } from '@/lib/client';
 import type { CategoryResponseData, BlogResponseData, Blog } from '@/types/api';

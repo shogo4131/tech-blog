@@ -1,6 +1,6 @@
 import { FC, useMemo } from 'react';
 
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 import { range } from '../../utils/range';
 

@@ -1,6 +1,6 @@
 import { FC, ReactNode, useCallback, useEffect, useState } from 'react';
 
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 import { Button } from '@/components/Button';
 import { Footer } from '@/components/Footer';

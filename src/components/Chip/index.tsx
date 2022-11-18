@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import Link from 'next/link';
 
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 import { Tag } from '@/types/api';
 
