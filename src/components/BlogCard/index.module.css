@@ -14,13 +14,18 @@
   line-height: 32px;
 }
 
-.content {
+.date {
   display: flex;
   align-items: center;
-}
-
-.date {
-  margin-right: 8px;
+  margin-bottom: 8px;
   color: var(--color-gray-200);
   font-size: 1.6rem;
+}
+
+.date > img {
+  margin-right: 4px;
+}
+
+.tagList {
+  margin: 0 4px 4px 0;
 }
