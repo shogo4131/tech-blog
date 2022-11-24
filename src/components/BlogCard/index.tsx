@@ -29,12 +29,11 @@ export const BlogCard: FC<Props> = ({ id, title, thumbnail, tags, createdAt }) =
           <Link href={`${page.blog.url}/${id}`}>{title}</Link>
         </h3>
       </div>
-      <div className={styles.content}>
-        <div className={styles.date}>
-          <time dateTime={createdAt}>{createdAt.slice(0, 10)}</time>
-        </div>
-        <Chip tags={tags} />
+      <div className={styles.date}>
+        <img src="/images/clock.svg" alt="日付" height={16} width={16} />
+        <time dateTime={createdAt}>{createdAt.slice(0, 10)}</time>
       </div>
+      <Chip tags={tags} tagClassName={styles.tagList} />
     </div>
   );
 };
