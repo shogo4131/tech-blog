@@ -26,6 +26,7 @@ type Props = {
 } & Blog;
 
 const BlogDetail: NextPage<Props> = ({
+  id,
   title,
   body,
   thumbnail,
@@ -36,7 +37,7 @@ const BlogDetail: NextPage<Props> = ({
   categoryId,
   description,
 }) => {
-  const url = `${seoContents.siteUrl}${page.blog.url}/${title}`;
+  const url = `${seoContents.siteUrl}${page.blog.url}/${id}`;
 
   const breadCrumbs: Crumbs[] = [
     {
