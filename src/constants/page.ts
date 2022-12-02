@@ -24,8 +24,4 @@ export const page = {
     url: '/profile',
     title: 'プロフィール',
   },
-  contract: {
-    url: '/contract',
-    title: 'お問合せ',
-  },
 } as const;
