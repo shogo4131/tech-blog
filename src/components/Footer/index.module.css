@@ -10,8 +10,14 @@
   gap: 16px;
 }
 
-.privacy {
+.linkArea {
+  display: flex;
   font-size: 1.6rem;
+}
+
+.divider {
+  border: 1px solid var(--color-white);
+  margin: 0 12px;
 }
 
 .copyLight {
