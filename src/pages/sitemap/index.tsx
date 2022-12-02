@@ -52,6 +52,17 @@ const Sitemap: NextPage<{ contents: Category[] }> = ({ contents }) => {
               ))}
             </Fragment>
           ))}
+          <li className={styles.category}>
+            <Link href={page.profile.url}>プロフィール</Link>
+          </li>
+          <li className={styles.category}>
+            <Link href={page.privacy.url}>免責事項・プライバシーポリシー</Link>
+          </li>
+          <li className={styles.category}>
+            <a href="https://forms.gle/Dvt3wWcXDzENR97CA" target="_blank" rel="noopener noreferrer">
+              お問合せ
+            </a>
+          </li>
         </ul>
       </div>
     </Layout>
