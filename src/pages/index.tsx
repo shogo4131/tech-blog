@@ -8,6 +8,7 @@ import type { Blog, BlogResponseData } from '@/types/api';
 
 import { BlogCard } from '@/components/BlogCard';
 import { Layout } from '@/components/Layout';
+import { Pagenation } from '@/components/Pagination';
 import { Seo } from '@/components/Seo';
 
 import { useMediaQuery } from '@/hooks/useMediaQuery';
@@ -17,25 +18,28 @@ import { seoContents } from '../constants';
 import styles from './index.module.css';
 
 // TODO: return以降を共通化
-const Home: NextPage<MicroCMSListResponse<Blog>> = ({ contents }) => {
+const Home: NextPage<MicroCMSListResponse<Blog>> = ({ contents, totalCount }) => {
   const { lg, sm } = useMediaQuery();
   const { blogTitle, description, siteUrl } = seoContents;
 
   return (
     <Layout>
       <Seo title={blogTitle} description={description} url={siteUrl} />
-      <article className={clsx(styles.blogItem, { [styles.lg]: lg, [styles.sm]: sm })}>
-        {contents.map(({ id, title, tags, thumbnail, createdAt }) => (
-          <BlogCard
-            key={id}
-            id={id}
-            title={title}
-            tags={tags}
-            thumbnail={thumbnail}
-            createdAt={createdAt}
-          />
-        ))}
-      </article>
+      <div>
+        <article className={clsx(styles.blogItem, { [styles.lg]: lg, [styles.sm]: sm })}>
+          {contents.map(({ id, title, tags, thumbnail, createdAt }) => (
+            <BlogCard
+              key={id}
+              id={id}
+              title={title}
+              tags={tags}
+              thumbnail={thumbnail}
+              createdAt={createdAt}
+            />
+          ))}
+        </article>
+        <Pagenation totalCount={totalCount} />
+      </div>
     </Layout>
   );
 };
@@ -46,6 +50,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       contents: blog.contents,
+      totalCount: blog.totalCount,
     },
   };
 };
