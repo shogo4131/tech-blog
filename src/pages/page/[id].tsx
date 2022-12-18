@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import type { MicroCMSListResponse } from 'microcms-js-sdk';
 
 import { client } from '@/lib/client';
