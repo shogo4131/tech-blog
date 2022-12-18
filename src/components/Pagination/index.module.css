@@ -19,5 +19,6 @@
 }
 
 .num:hover {
+  background-color: var(--color-gray-400);
   cursor: pointer;
 }
