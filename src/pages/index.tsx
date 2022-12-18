@@ -13,9 +13,11 @@ import { Seo } from '@/components/Seo';
 
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 
-import { seoContents } from '../constants';
+import { seoContents, pages } from '../constants';
 
 import styles from './index.module.css';
+
+const PER_PAGE = 9;
 
 // TODO: return以降を共通化
 const Home: NextPage<MicroCMSListResponse<Blog>> = ({ contents, totalCount }) => {
@@ -38,7 +40,7 @@ const Home: NextPage<MicroCMSListResponse<Blog>> = ({ contents, totalCount }) =>
             />
           ))}
         </article>
-        <Pagenation totalCount={totalCount} />
+        {totalCount >= PER_PAGE && <Pagenation pageUrl={pages.page.url} totalCount={totalCount} />}
       </div>
     </Layout>
   );

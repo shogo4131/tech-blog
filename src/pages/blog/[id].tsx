@@ -16,7 +16,7 @@ import { Layout } from '@/components/Layout';
 import { Seo } from '@/components/Seo';
 import { Toc } from '@/components/Toc';
 
-import { page, seoContents } from '../../constants';
+import { pages, seoContents } from '../../constants';
 
 import styles from './[id].module.css';
 
@@ -37,17 +37,17 @@ const BlogDetail: NextPage<Props> = ({
   categoryId,
   description,
 }) => {
-  const url = `${seoContents.siteUrl}${page.blog.url}/${id}`;
+  const url = `${seoContents.siteUrl}${pages.blog.url}/${id}`;
 
   const breadCrumbs: Crumbs[] = [
     {
       id: 1,
-      href: page.top.url,
-      label: page.top.title,
+      href: pages.top.url,
+      label: pages.top.title,
     },
     {
       id: 2,
-      href: `${page.category.url}/${categoryId}`,
+      href: `${pages.category.url}/${categoryId}`,
       label: category.toString(),
     },
     {

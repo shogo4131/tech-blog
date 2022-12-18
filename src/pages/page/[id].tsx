@@ -14,7 +14,7 @@ import { Seo } from '@/components/Seo';
 
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 
-import { seoContents } from '../../constants';
+import { seoContents, pages } from '../../constants';
 import styles from '../index.module.css';
 
 const Page: NextPage<MicroCMSListResponse<Blog>> = ({ contents, totalCount }) => {
@@ -37,7 +37,7 @@ const Page: NextPage<MicroCMSListResponse<Blog>> = ({ contents, totalCount }) =>
             />
           ))}
         </article>
-        <Pagenation totalCount={totalCount} />
+        <Pagenation pageUrl={pages.page.url} totalCount={totalCount} />
       </div>
     </Layout>
   );
