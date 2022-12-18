@@ -13,19 +13,20 @@ import { Seo } from '@/components/Seo';
 
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 
-import { pages, seoContents } from '../../constants';
-import styles from '../index.module.css';
+import { pages, seoContents } from '../../../constants';
+import styles from '../../index.module.css';
 
 type Props = {
   contents: Blog[];
   category: string;
+  categoryType: string;
   totalCount: number;
 };
 
 const PER_PAGE = 9;
 
 // TODO: retrun 以下を共通化する
-const Category: NextPage<Props> = ({ contents, category, totalCount }) => {
+const Category: NextPage<Props> = ({ contents, category, categoryType, totalCount }) => {
   const { lg, sm } = useMediaQuery();
   const url = `${seoContents.siteUrl}${pages.category.url}/${category}`;
 
@@ -64,7 +65,12 @@ const Category: NextPage<Props> = ({ contents, category, totalCount }) => {
             ))}
           </div>
         </article>
-        {totalCount >= PER_PAGE && <Pagenation totalCount={totalCount} />}
+        {totalCount >= PER_PAGE && (
+          <Pagenation
+            pageUrl={`${pages.category.url}/${categoryType}${pages.page.url}`}
+            totalCount={totalCount}
+          />
+        )}
       </div>
     </Layout>
   );
@@ -82,7 +88,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   if (!ctx.params) return { notFound: true };
-  const id = ctx.params.id && Array.isArray(ctx.params.id) ? ctx.params.id[0] : ctx.params.id ?? '';
+  const id =
+    ctx.params.slug && Array.isArray(ctx.params.slug) ? ctx.params.slug[0] : ctx.params.slug ?? '';
 
   const blog = await client.get<BlogResponseData>({
     endpoint: `blog`,
@@ -96,6 +103,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
       contents: blog.contents,
       category: category[0].category,
       totalCount: blog.totalCount,
+      categoryType: category[0].id,
     },
   };
 };
