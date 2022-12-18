@@ -12,7 +12,7 @@ import { Seo } from '@/components/Seo';
 
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 
-import { page, seoContents } from '../../constants';
+import { pages, seoContents } from '../../constants';
 import styles from '../index.module.css';
 
 type Props = {
@@ -23,13 +23,13 @@ type Props = {
 // TODO: retrun 以下を共通化する
 const Tags: NextPage<Props> = ({ contents, tag }) => {
   const { lg, sm } = useMediaQuery();
-  const url = `${seoContents.siteUrl}${page.tags.url}/${tag}`;
+  const url = `${seoContents.siteUrl}${pages.tags.url}/${tag}`;
 
   const breadCrumbs: Crumbs[] = [
     {
       id: 1,
-      href: page.top.url,
-      label: page.top.title,
+      href: pages.top.url,
+      label: pages.top.title,
     },
     {
       id: 2,

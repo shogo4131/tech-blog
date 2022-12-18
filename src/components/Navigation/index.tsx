@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import Link from 'next/link';
 
-import { page } from '../../constants/page';
+import { pages } from '../../constants/pages';
 
 import styles from './index.module.css';
 
@@ -10,22 +10,22 @@ const navigationHeaders = [
   {
     title: 'フロントエンド',
     subtitle: 'Frontend',
-    href: `${page.category.url}/frontend`,
+    href: `${pages.category.url}/frontend`,
   },
   // {
   //   title: 'バックエンド',
   //   subtitle: 'Backend',
-  //   href: `${page.category.url}/backend`,
+  //   href: `${pages.category.url}/backend`,
   // },
   {
     title: 'その他',
     subtitle: 'Others',
-    href: `${page.category.url}/others`,
+    href: `${pages.category.url}/others`,
   },
   {
     title: 'サイトマップ',
     subtitle: 'Sitemap',
-    href: `${page.sitemap.url}`,
+    href: `${pages.sitemap.url}`,
   },
 ] as const;
 

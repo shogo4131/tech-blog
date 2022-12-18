@@ -6,7 +6,7 @@ import { clsx } from 'clsx';
 
 import { Tag } from '@/types/api';
 
-import { page } from '../../constants/page';
+import { pages } from '../../constants/pages';
 
 import styles from './index.module.css';
 
@@ -20,7 +20,7 @@ export const Chip: FC<Props> = ({ className, tagClassName, tags }) => {
   return (
     <div className={clsx(styles.tags, className)}>
       {tags.map(({ id, tag }) => (
-        <Link href={`${page.tags.url}/${id}`} key={id} className={clsx(styles.tag, tagClassName)}>
+        <Link href={`${pages.tags.url}/${id}`} key={id} className={clsx(styles.tag, tagClassName)}>
           <span>{tag}</span>
         </Link>
       ))}

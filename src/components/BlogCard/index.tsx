@@ -6,7 +6,7 @@ import type { Blog } from '@/types/api';
 
 import { Chip } from '@/components/Chip';
 
-import { page } from '../../constants/page';
+import { pages } from '../../constants/pages';
 
 import styles from './index.module.css';
 
@@ -15,7 +15,7 @@ type Props = Pick<Blog, 'id' | 'title' | 'thumbnail' | 'tags' | 'createdAt'>;
 export const BlogCard: FC<Props> = ({ id, title, thumbnail, tags, createdAt }) => {
   return (
     <div className={styles.root}>
-      <Link href={`${page.blog.url}/${id}`}>
+      <Link href={`${pages.blog.url}/${id}`}>
         <img
           src={thumbnail.url}
           height={600}
@@ -26,7 +26,7 @@ export const BlogCard: FC<Props> = ({ id, title, thumbnail, tags, createdAt }) =
       </Link>
       <div className={styles.title}>
         <h3>
-          <Link href={`${page.blog.url}/${id}`}>{title}</Link>
+          <Link href={`${pages.blog.url}/${id}`}>{title}</Link>
         </h3>
       </div>
       <div className={styles.date}>

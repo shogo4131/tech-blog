@@ -8,28 +8,32 @@ import type { CategoryResponseData, BlogResponseData, Blog } from '@/types/api';
 import { BlogCard } from '@/components/BlogCard';
 import { BreadCrumb, Crumbs } from '@/components/BreadCrumb';
 import { Layout } from '@/components/Layout';
+import { Pagenation } from '@/components/Pagination';
 import { Seo } from '@/components/Seo';
 
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 
-import { page, seoContents } from '../../constants';
+import { pages, seoContents } from '../../constants';
 import styles from '../index.module.css';
 
 type Props = {
   contents: Blog[];
   category: string;
+  totalCount: number;
 };
 
+const PER_PAGE = 9;
+
 // TODO: retrun 以下を共通化する
-const Category: NextPage<Props> = ({ contents, category }) => {
+const Category: NextPage<Props> = ({ contents, category, totalCount }) => {
   const { lg, sm } = useMediaQuery();
-  const url = `${seoContents.siteUrl}${page.category.url}/${category}`;
+  const url = `${seoContents.siteUrl}${pages.category.url}/${category}`;
 
   const breadCrumbs: Crumbs[] = [
     {
       id: 1,
-      href: page.top.url,
-      label: page.top.title,
+      href: pages.top.url,
+      label: pages.top.title,
     },
     {
       id: 2,
@@ -44,21 +48,24 @@ const Category: NextPage<Props> = ({ contents, category }) => {
         description={seoContents.description}
         url={url}
       />
-      <article>
-        <BreadCrumb items={breadCrumbs} className={styles.breadCrumb} />
-        <div className={clsx(styles.blogItem, { [styles.lg]: lg, [styles.sm]: sm })}>
-          {contents.map(({ id, title, tags, thumbnail, createdAt }) => (
-            <BlogCard
-              key={id}
-              id={id}
-              title={title}
-              tags={tags}
-              thumbnail={thumbnail}
-              createdAt={createdAt}
-            />
-          ))}
-        </div>
-      </article>
+      <div>
+        <article>
+          <BreadCrumb items={breadCrumbs} className={styles.breadCrumb} />
+          <div className={clsx(styles.blogItem, { [styles.lg]: lg, [styles.sm]: sm })}>
+            {contents.map(({ id, title, tags, thumbnail, createdAt }) => (
+              <BlogCard
+                key={id}
+                id={id}
+                title={title}
+                tags={tags}
+                thumbnail={thumbnail}
+                createdAt={createdAt}
+              />
+            ))}
+          </div>
+        </article>
+        {totalCount >= PER_PAGE && <Pagenation totalCount={totalCount} />}
+      </div>
     </Layout>
   );
 };
@@ -79,7 +86,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 
   const blog = await client.get<BlogResponseData>({
     endpoint: `blog`,
-    queries: { filters: `category[contains]${id}` },
+    queries: { filters: `category[contains]${id}`, limit: 9 },
   });
 
   const category = blog.contents[0].category.filter((category) => category.id === id);
@@ -88,6 +95,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     props: {
       contents: blog.contents,
       category: category[0].category,
+      totalCount: blog.totalCount,
     },
   };
 };
