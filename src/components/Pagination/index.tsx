@@ -18,9 +18,9 @@ const PER_PAGE = 9;
 export const Pagenation: FC<Props> = ({ className, totalCount }) => {
   return (
     <div className={clsx(styles.root, className)}>
-      <ul>
+      <ul className={styles.pageNum}>
         {range(1, Math.ceil(totalCount / PER_PAGE)).map((number) => (
-          <li key={number}>
+          <li key={number} className={styles.num}>
             <Link href={`/page/${number}`}>{number}</Link>
           </li>
         ))}
