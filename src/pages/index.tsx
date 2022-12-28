@@ -40,7 +40,7 @@ const Home: NextPage<MicroCMSListResponse<Blog>> = ({ contents, totalCount }) =>
             />
           ))}
         </article>
-        {totalCount >= PER_PAGE && <Pagenation pageUrl={pages.page.url} totalCount={totalCount} />}
+        {totalCount > PER_PAGE && <Pagenation pageUrl={pages.page.url} totalCount={totalCount} />}
       </div>
     </Layout>
   );

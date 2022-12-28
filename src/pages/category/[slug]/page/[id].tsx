@@ -24,8 +24,6 @@ type Props = {
   totalCount: number;
 };
 
-const PER_PAGE = 9;
-
 // TODO: og urlの修正 and リファクタ
 const CategoryPage: NextPage<Props> = ({ contents, category, categoryType, totalCount }) => {
   const { lg, sm } = useMediaQuery();
@@ -66,12 +64,10 @@ const CategoryPage: NextPage<Props> = ({ contents, category, categoryType, total
             ))}
           </div>
         </article>
-        {totalCount >= PER_PAGE && (
-          <Pagenation
-            pageUrl={`${pages.category.url}/${categoryType}${pages.page.url}`}
-            totalCount={totalCount}
-          />
-        )}
+        <Pagenation
+          pageUrl={`${pages.category.url}/${categoryType}${pages.page.url}`}
+          totalCount={totalCount}
+        />
       </div>
     </Layout>
   );

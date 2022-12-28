@@ -65,7 +65,7 @@ const Category: NextPage<Props> = ({ contents, category, categoryType, totalCoun
             ))}
           </div>
         </article>
-        {totalCount >= PER_PAGE && (
+        {totalCount > PER_PAGE && (
           <Pagenation
             pageUrl={`${pages.category.url}/${categoryType}${pages.page.url}`}
             totalCount={totalCount}
