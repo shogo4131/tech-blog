@@ -3,7 +3,7 @@ import { FC } from 'react';
 import Link from 'next/link';
 
 import sidebarJson from '../../../../public/sidebar.json';
-import { page } from '../../../constants/page';
+import { pages } from '../../../constants/pages';
 
 import styles from './index.module.css';
 
@@ -22,7 +22,7 @@ export const CategoryList: FC = () => {
       <ul className={styles.contents}>
         {categories.map(({ id, category, post }) => (
           <li key={id} className={styles.item}>
-            <Link href={`${page.category.url}/${id}`}>{`${category}(${post.length})`}</Link>
+            <Link href={`${pages.category.url}/${id}`}>{`${category}(${post.length})`}</Link>
           </li>
         ))}
       </ul>

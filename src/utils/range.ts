@@ -1,3 +1,3 @@
-export const range = (num: number, start = 0): number[] => {
-  return [...new Array(num)].map((_, i) => i + start);
+export const range = (start: number, end: number) => {
+  return [...Array(end - start + 1)].map((_, i) => start + i);
 };

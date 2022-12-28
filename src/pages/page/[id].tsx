@@ -1,10 +1,11 @@
-import type { GetStaticProps, NextPage } from 'next';
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
 import { clsx } from 'clsx';
 import type { MicroCMSListResponse } from 'microcms-js-sdk';
 
 import { client } from '@/lib/client';
 import type { Blog, BlogResponseData } from '@/types/api';
+import { range } from '@/utils/range';
 
 import { BlogCard } from '@/components/BlogCard';
 import { Layout } from '@/components/Layout';
@@ -13,14 +14,10 @@ import { Seo } from '@/components/Seo';
 
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 
-import { seoContents, pages } from '../constants';
+import { seoContents, pages } from '../../constants';
+import styles from '../index.module.css';
 
-import styles from './index.module.css';
-
-const PER_PAGE = 9;
-
-// TODO: return以降を共通化
-const Home: NextPage<MicroCMSListResponse<Blog>> = ({ contents, totalCount }) => {
+const Page: NextPage<MicroCMSListResponse<Blog>> = ({ contents, totalCount }) => {
   const { lg, sm } = useMediaQuery();
   const { blogTitle, description, siteUrl } = seoContents;
 
@@ -40,21 +37,39 @@ const Home: NextPage<MicroCMSListResponse<Blog>> = ({ contents, totalCount }) =>
             />
           ))}
         </article>
-        {totalCount > PER_PAGE && <Pagenation pageUrl={pages.page.url} totalCount={totalCount} />}
+        <Pagenation pageUrl={pages.page.url} totalCount={totalCount} />
       </div>
     </Layout>
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
-  const blog = await client.get<BlogResponseData>({ endpoint: 'blog', queries: { limit: 9 } });
+export const getStaticPaths: GetStaticPaths = async () => {
+  const blogs = await client.get<BlogResponseData>({ endpoint: 'blog' });
+
+  const paths = range(1, Math.ceil(blogs.totalCount / 9)).map((id) => `/page/${id}`);
+
+  return {
+    paths,
+    fallback: false,
+  };
+};
+
+export const getStaticProps: GetStaticProps = async (ctx) => {
+  if (!ctx.params) return { notFound: true };
+  const id = ctx.params.id && Array.isArray(ctx.params.id) ? ctx.params.id[0] : ctx.params.id ?? '';
+  const offset = (Number(id) - 1) * 9;
+
+  const data = await client.get<BlogResponseData>({
+    endpoint: `blog`,
+    queries: { offset, limit: 9 },
+  });
 
   return {
     props: {
-      contents: blog.contents,
-      totalCount: blog.totalCount,
+      contents: data.contents,
+      totalCount: data.totalCount,
     },
   };
 };
 
-export default Home;
+export default Page;

@@ -4,19 +4,19 @@ import { BreadCrumb, Crumbs } from '@/components/BreadCrumb';
 import { Layout } from '@/components/Layout';
 import { Seo } from '@/components/Seo';
 
-import { page, seoContents } from '../../constants';
+import { pages, seoContents } from '../../constants';
 
 import styles from './index.module.css';
 
 const breadCrumbs: Crumbs[] = [
   {
     id: 1,
-    href: page.top.url,
-    label: page.top.title,
+    href: pages.top.url,
+    label: pages.top.title,
   },
   {
     id: 2,
-    label: page.privacy.title,
+    label: pages.privacy.title,
   },
 ];
 
@@ -26,13 +26,13 @@ const Privacy: NextPage = () => {
   return (
     <Layout>
       <Seo
-        title={`${page.privacy.title} | ${blogTitle}`}
+        title={`${pages.privacy.title} | ${blogTitle}`}
         description={description}
-        url={`${siteUrl}${page.privacy.url}`}
+        url={`${siteUrl}${pages.privacy.url}`}
       />
       <div className={styles.root}>
         <BreadCrumb items={breadCrumbs} />
-        <h1 className={styles.title}>{page.privacy.title}</h1>
+        <h1 className={styles.title}>{pages.privacy.title}</h1>
         <div className={styles.contents}>
           <p>
             Reactおじさんブログ(https://react-uncle-blog.netlify.app)(以下「当ブログ」)における免責事項・プライバシーポリシーを次の通り記載します。

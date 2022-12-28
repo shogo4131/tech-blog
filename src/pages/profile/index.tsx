@@ -4,19 +4,19 @@ import { BreadCrumb, Crumbs } from '@/components/BreadCrumb';
 import { Layout } from '@/components/Layout';
 import { Seo } from '@/components/Seo';
 
-import { page, seoContents, frontend, backtend } from '../../constants';
+import { pages, seoContents, frontend, backtend } from '../../constants';
 
 import styles from './index.module.css';
 
 const breadCrumbs: Crumbs[] = [
   {
     id: 1,
-    href: page.top.url,
-    label: page.top.title,
+    href: pages.top.url,
+    label: pages.top.title,
   },
   {
     id: 2,
-    label: page.profile.title,
+    label: pages.profile.title,
   },
 ];
 
@@ -26,13 +26,13 @@ const Profile: NextPage = () => {
   return (
     <Layout>
       <Seo
-        title={`${page.profile.title} | ${blogTitle}`}
+        title={`${pages.profile.title} | ${blogTitle}`}
         description={description}
-        url={`${siteUrl}${page.profile.url}`}
+        url={`${siteUrl}${pages.profile.url}`}
       />
       <div className={styles.root}>
         <BreadCrumb items={breadCrumbs} />
-        <h1 className={styles.title}>{page.profile.title}</h1>
+        <h1 className={styles.title}>{pages.profile.title}</h1>
         <div className={styles.selfIntroduction}>
           <p>初めまして！！</p>
           <p>Reactおじさんです。</p>

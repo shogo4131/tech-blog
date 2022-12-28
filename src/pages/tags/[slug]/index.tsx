@@ -12,8 +12,8 @@ import { Seo } from '@/components/Seo';
 
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 
-import { page, seoContents } from '../../constants';
-import styles from '../index.module.css';
+import { pages, seoContents } from '../../../constants';
+import styles from '../../index.module.css';
 
 type Props = {
   contents: Blog[];
@@ -23,13 +23,13 @@ type Props = {
 // TODO: retrun 以下を共通化する
 const Tags: NextPage<Props> = ({ contents, tag }) => {
   const { lg, sm } = useMediaQuery();
-  const url = `${seoContents.siteUrl}${page.tags.url}/${tag}`;
+  const url = `${seoContents.siteUrl}${pages.tags.url}/${tag}`;
 
   const breadCrumbs: Crumbs[] = [
     {
       id: 1,
-      href: page.top.url,
-      label: page.top.title,
+      href: pages.top.url,
+      label: pages.top.title,
     },
     {
       id: 2,
@@ -75,11 +75,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   if (!ctx.params) return { notFound: true };
-  const id = ctx.params.id && Array.isArray(ctx.params.id) ? ctx.params.id[0] : ctx.params.id ?? '';
+  const id =
+    ctx.params.slug && Array.isArray(ctx.params.slug) ? ctx.params.slug[0] : ctx.params.slug ?? '';
 
   const blog = await client.get<BlogResponseData>({
     endpoint: `blog`,
-    queries: { filters: `tags[contains]${id}` },
+    queries: { filters: `tags[contains]${id}`, limit: 9 },
   });
 
   const tag = blog.contents[0].tags.filter((tag) => tag.id === id);

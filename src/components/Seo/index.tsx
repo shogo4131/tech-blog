@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import { page, seoContents } from '../../constants';
+import { pages, seoContents } from '../../constants';
 
 type Props = {
   title: string;
@@ -16,7 +16,7 @@ export const Seo: FC<Props> = ({ title, description, url, image }) => {
   const { pathname } = useRouter();
   const { ogImage } = seoContents;
 
-  const isBlogPage = pathname.includes(page.blog.url);
+  const isBlogPage = pathname.includes(pages.blog.url);
 
   return (
     <Head>
