@@ -1,7 +1,10 @@
-export const page = {
+export const pages = {
   top: {
     url: '/',
     title: 'トップ',
+  },
+  page: {
+    url: '/page',
   },
   blog: {
     url: '/blog',

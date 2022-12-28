@@ -10,19 +10,19 @@ import { BreadCrumb, Crumbs } from '@/components/BreadCrumb';
 import { Layout } from '@/components/Layout';
 import { Seo } from '@/components/Seo';
 
-import { page, seoContents } from '../../constants';
+import { pages, seoContents } from '../../constants';
 
 import styles from './index.module.css';
 
 const breadCrumbs: Crumbs[] = [
   {
     id: 1,
-    href: page.top.url,
-    label: page.top.title,
+    href: pages.top.url,
+    label: pages.top.title,
   },
   {
     id: 2,
-    label: page.sitemap.title,
+    label: pages.sitemap.title,
   },
 ];
 
@@ -32,31 +32,31 @@ const Sitemap: NextPage<{ contents: Category[] }> = ({ contents }) => {
   return (
     <Layout>
       <Seo
-        title={`${page.sitemap.title} | ${blogTitle}`}
+        title={`${pages.sitemap.title} | ${blogTitle}`}
         description={description}
-        url={`${siteUrl}${page.sitemap.url}`}
+        url={`${siteUrl}${pages.sitemap.url}`}
       />
       <div className={styles.root}>
         <BreadCrumb items={breadCrumbs} />
-        <h1 className={styles.title}>{page.sitemap.title}</h1>
+        <h1 className={styles.title}>{pages.sitemap.title}</h1>
         <ul className={styles.contents}>
           {contents.map(({ id, category, post }) => (
             <Fragment key={id}>
               <li className={styles.category}>
-                <Link href={`${page.category.url}/${id}`}>{category}</Link>
+                <Link href={`${pages.category.url}/${id}`}>{category}</Link>
               </li>
               {post.map(({ id, title }) => (
                 <li key={id} className={styles.blogTitle}>
-                  <Link href={`${page.blog.url}/${id}`}>{title}</Link>
+                  <Link href={`${pages.blog.url}/${id}`}>{title}</Link>
                 </li>
               ))}
             </Fragment>
           ))}
           <li className={styles.category}>
-            <Link href={page.profile.url}>プロフィール</Link>
+            <Link href={pages.profile.url}>プロフィール</Link>
           </li>
           <li className={styles.category}>
-            <Link href={page.privacy.url}>免責事項・プライバシーポリシー</Link>
+            <Link href={pages.privacy.url}>免責事項・プライバシーポリシー</Link>
           </li>
           <li className={styles.category}>
             <a href="https://forms.gle/Dvt3wWcXDzENR97CA" target="_blank" rel="noopener noreferrer">
