@@ -92,12 +92,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   if (!ctx.params) return { notFound: true };
+  const slug =
+    ctx.params.slug && Array.isArray(ctx.params.slug) ? ctx.params.slug[0] : ctx.params.slug ?? '';
   const id = ctx.params.id && Array.isArray(ctx.params.id) ? ctx.params.id[0] : ctx.params.id ?? '';
   const offset = (Number(id) - 1) * 9;
 
   const data = await client.get<BlogResponseData>({
     endpoint: `blog`,
-    queries: { offset, limit: 9 },
+    queries: { offset, limit: 9, filters: `category[contains]${slug}` },
   });
 
   return {
