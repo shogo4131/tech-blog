@@ -2,7 +2,6 @@
   "name": "tech-blog",
   "version": "1.4.0",
   "private": true,
-  "license": "MIT",
   "scripts": {
     "dev": "next dev && node createData.js",
     "build": "next build && node createData.js && next export && next-sitemap --config next-sitemap.config.js",
