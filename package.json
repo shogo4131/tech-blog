@@ -75,7 +75,7 @@
     "scaffdog": "^2.4.0",
     "storybook-addon-next-router": "^4.0.2",
     "storybook-css-modules-preset": "^1.1.1",
-    "stylelint": "^14.13.0",
+    "stylelint": "^14.16.1",
     "stylelint-config-idiomatic-order": "^9.0.0",
     "stylelint-config-prettier": "^9.0.4",
     "stylelint-config-standard": "^29.0.0",
