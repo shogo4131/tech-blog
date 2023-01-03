@@ -9,6 +9,7 @@ import { TagList } from '@/components/Sidebar/TagList';
 
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 
+import { Midworks } from './Midworks';
 import styles from './index.module.css';
 
 type Props = {
@@ -26,6 +27,7 @@ export const Sidebar: FC<Props> = () => {
 
   return (
     <aside className={clsx(styles.root, { [styles.xl]: xl })}>
+      <Midworks />
       {!xl && (
         <InputFiled
           readOnly
