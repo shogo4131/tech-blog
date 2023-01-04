@@ -52,15 +52,8 @@ const CategoryPage: NextPage<Props> = ({ contents, category, categoryType, total
         <article>
           <BreadCrumb items={breadCrumbs} className={styles.breadCrumb} />
           <div className={clsx(styles.blogItem, { [styles.lg]: lg, [styles.sm]: sm })}>
-            {contents.map(({ id, title, tags, thumbnail, createdAt }) => (
-              <BlogCard
-                key={id}
-                id={id}
-                title={title}
-                tags={tags}
-                thumbnail={thumbnail}
-                createdAt={createdAt}
-              />
+            {contents.map((content) => (
+              <BlogCard key={content.id} content={content} />
             ))}
           </div>
         </article>

@@ -26,15 +26,8 @@ const Page: NextPage<MicroCMSListResponse<Blog>> = ({ contents, totalCount }) =>
       <Seo title={blogTitle} description={description} url={siteUrl} />
       <div>
         <article className={clsx(styles.blogItem, { [styles.lg]: lg, [styles.sm]: sm })}>
-          {contents.map(({ id, title, tags, thumbnail, createdAt }) => (
-            <BlogCard
-              key={id}
-              id={id}
-              title={title}
-              tags={tags}
-              thumbnail={thumbnail}
-              createdAt={createdAt}
-            />
+          {contents.map((content) => (
+            <BlogCard key={content.id} content={content} />
           ))}
         </article>
         <Pagenation pageUrl={pages.page.url} totalCount={totalCount} />

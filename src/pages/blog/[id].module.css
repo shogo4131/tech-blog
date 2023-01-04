@@ -22,7 +22,7 @@
 }
 
 .datetime > time {
-  margin-left: 4px;
+  margin: 0 8px 0 4px;
 }
 
 .thumbnail {
