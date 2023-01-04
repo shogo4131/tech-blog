@@ -10,13 +10,9 @@ import { pages } from '../../constants/pages';
 
 import styles from './index.module.css';
 
-type Props = {
-  content: Blog;
-};
+type Props = Pick<Blog, 'id' | 'title' | 'thumbnail' | 'tags' | 'createdAt'>;
 
-export const BlogCard: FC<Props> = ({ content }) => {
-  const { id, thumbnail, title, tags, createdAt } = content;
-
+export const BlogCard: FC<Props> = ({ id, title, thumbnail, tags, createdAt }) => {
   return (
     <div className={styles.root}>
       <Link href={`${pages.blog.url}/${id}`}>
