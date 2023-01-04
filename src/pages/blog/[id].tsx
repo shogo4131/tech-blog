@@ -36,6 +36,7 @@ const BlogDetail: NextPage<Props> = ({
   toc,
   categoryId,
   description,
+  updatedAt,
 }) => {
   const url = `${seoContents.siteUrl}${pages.blog.url}/${id}`;
 
@@ -83,6 +84,8 @@ const BlogDetail: NextPage<Props> = ({
           <span className={styles.datetime}>
             <img src="/images/clock.svg" alt="日付" height={16} width={16} />
             <time dateTime={createdAt}>{createdAt.slice(0, 10)}</time>
+            <img src="/images/update-time.svg" alt="更新日" height={16} width={16} />
+            <time dateTime={updatedAt}>{updatedAt.slice(0, 10)}</time>
           </span>
           <Chip tags={tags} />
           <img
@@ -147,6 +150,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
       category: contents[0].category[0].category,
       categoryId: contents[0].category[0].id,
       description: contents[0].description,
+      updatedAt: contents[0].updatedAt,
       toc,
     },
   };
