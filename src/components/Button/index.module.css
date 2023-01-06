@@ -1,0 +1,24 @@
+.root {
+  display: flex;
+  width: 100px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--color-gray-500);
+  color: var(--color-white);
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.root:hover {
+  background-color: var(--color-gray-400);
+}
+
+.root:disabled {
+  background-color: var(--color-gray-200);
+  color: var(--color-white);
+  cursor: auto;
+}
