@@ -34,8 +34,8 @@
     "use-media": "^1.4.0"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^4.30.0",
     "@babel/core": "^7.20.12",
-    "@netlify/plugin-nextjs": "^4.29.4",
     "@next/bundle-analyzer": "^13.1.1",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.15",
