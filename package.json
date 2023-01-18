@@ -70,7 +70,7 @@
     "jest": "^29.3.1",
     "jest-environment-jsdom": "^29.3.1",
     "netlify-cli": "^12.7.2",
-    "next-sitemap": "^3.1.44",
+    "next-sitemap": "^3.1.45",
     "prettier": "^2.8.3",
     "scaffdog": "^2.4.0",
     "storybook-addon-next-router": "^4.0.2",
