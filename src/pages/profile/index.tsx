@@ -1,22 +1,26 @@
 import type { NextPage } from 'next';
 
+import { pagesPath } from '@/lib/$path';
+
 import { BreadCrumb, Crumbs } from '@/components/BreadCrumb';
 import { Layout } from '@/components/Layout';
 import { Seo } from '@/components/Seo';
 
-import { pages, seoContents, frontend, backtend } from '../../constants';
+import { seoContents, frontend, backtend } from '../../constants';
 
 import styles from './index.module.css';
+
+const pageTitle = 'プロフィール';
 
 const breadCrumbs: Crumbs[] = [
   {
     id: 1,
-    href: pages.top.url,
-    label: pages.top.title,
+    href: pagesPath.$url().pathname,
+    label: 'トップ',
   },
   {
     id: 2,
-    label: pages.profile.title,
+    label: pageTitle,
   },
 ];
 
@@ -26,13 +30,13 @@ const Profile: NextPage = () => {
   return (
     <Layout>
       <Seo
-        title={`${pages.profile.title} | ${blogTitle}`}
+        title={`${pageTitle} | ${blogTitle}`}
         description={description}
-        url={`${siteUrl}${pages.profile.url}`}
+        url={`${siteUrl}${pagesPath.profile.$url().pathname}`}
       />
       <div className={styles.root}>
         <BreadCrumb items={breadCrumbs} />
-        <h1 className={styles.title}>{pages.profile.title}</h1>
+        <h1 className={styles.title}>{pageTitle}</h1>
         <div className={styles.selfIntroduction}>
           <p>初めまして！！</p>
           <p>Reactおじさんです。</p>

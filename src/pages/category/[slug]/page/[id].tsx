@@ -24,7 +24,7 @@ type Props = {
   totalCount: number;
 };
 
-// TODO: og urlの修正 and リファクタ
+// TODO: リファクタ
 const CategoryPage: NextPage<Props> = ({ contents, category, categoryType, totalCount }) => {
   const { lg, sm } = useMediaQuery();
   const url = `${seoContents.siteUrl}${pages.category.url}/${categoryType}`;

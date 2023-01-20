@@ -3,6 +3,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { clsx } from 'clsx';
 import type { MicroCMSListResponse } from 'microcms-js-sdk';
 
+import { pagesPath } from '@/lib/$path';
 import { client } from '@/lib/client';
 import type { Blog, BlogResponseData } from '@/types/api';
 import { range } from '@/utils/range';
@@ -14,7 +15,7 @@ import { Seo } from '@/components/Seo';
 
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 
-import { seoContents, pages } from '../../constants';
+import { seoContents } from '../../constants';
 import styles from '../index.module.css';
 
 const Page: NextPage<MicroCMSListResponse<Blog>> = ({ contents, totalCount }) => {
@@ -30,7 +31,7 @@ const Page: NextPage<MicroCMSListResponse<Blog>> = ({ contents, totalCount }) =>
             <BlogCard key={content.id} content={content} />
           ))}
         </article>
-        <Pagenation pageUrl={pages.page.url} totalCount={totalCount} />
+        <Pagenation pageUrl={pagesPath.$url().pathname} totalCount={totalCount} />
       </div>
     </Layout>
   );
