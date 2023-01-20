@@ -1,22 +1,26 @@
 import type { NextPage } from 'next';
 
+import { pagesPath } from '@/lib/$path';
+
 import { BreadCrumb, Crumbs } from '@/components/BreadCrumb';
 import { Layout } from '@/components/Layout';
 import { Seo } from '@/components/Seo';
 
-import { pages, seoContents } from '../../constants';
+import { seoContents } from '../../constants';
 
 import styles from './index.module.css';
+
+const pageTitle = '免責事項・プライバシーポリシー';
 
 const breadCrumbs: Crumbs[] = [
   {
     id: 1,
-    href: pages.top.url,
-    label: pages.top.title,
+    href: pagesPath.$url().pathname,
+    label: 'トップ',
   },
   {
     id: 2,
-    label: pages.privacy.title,
+    label: pageTitle,
   },
 ];
 
@@ -26,13 +30,13 @@ const Privacy: NextPage = () => {
   return (
     <Layout>
       <Seo
-        title={`${pages.privacy.title} | ${blogTitle}`}
+        title={`${pageTitle} | ${blogTitle}`}
         description={description}
-        url={`${siteUrl}${pages.privacy.url}`}
+        url={`${siteUrl}${pagesPath.privacy.$url().pathname}`}
       />
       <div className={styles.root}>
         <BreadCrumb items={breadCrumbs} />
-        <h1 className={styles.title}>{pages.privacy.title}</h1>
+        <h1 className={styles.title}>{pageTitle}</h1>
         <div className={styles.contents}>
           <p>
             Reactおじさんブログ(https://react-uncle-blog.netlify.app)(以下「当ブログ」)における免責事項・プライバシーポリシーを次の通り記載します。

@@ -2,11 +2,10 @@ import { FC } from 'react';
 
 import Link from 'next/link';
 
+import { pagesPath } from '@/lib/$path';
 import type { Blog } from '@/types/api';
 
 import { Chip } from '@/components/Chip';
-
-import { pages } from '../../constants/pages';
 
 import styles from './index.module.css';
 
@@ -19,7 +18,7 @@ export const BlogCard: FC<Props> = ({ content }) => {
 
   return (
     <div className={styles.root}>
-      <Link href={`${pages.blog.url}/${id}`}>
+      <Link href={pagesPath.blog._id(id).$url()}>
         <img
           src={thumbnail.url}
           height={600}
@@ -30,7 +29,7 @@ export const BlogCard: FC<Props> = ({ content }) => {
       </Link>
       <div className={styles.title}>
         <h3>
-          <Link href={`${pages.blog.url}/${id}`}>{title}</Link>
+          <Link href={pagesPath.blog._id(id).$url()}>{title}</Link>
         </h3>
       </div>
       <div className={styles.date}>

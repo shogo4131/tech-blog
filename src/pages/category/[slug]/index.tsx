@@ -2,6 +2,7 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
 import { clsx } from 'clsx';
 
+import { pagesPath } from '@/lib/$path';
 import { client } from '@/lib/client';
 import type { CategoryResponseData, BlogResponseData, Blog } from '@/types/api';
 
@@ -28,13 +29,13 @@ const PER_PAGE = 9;
 // TODO: retrun 以下を共通化する
 const Category: NextPage<Props> = ({ contents, category, categoryType, totalCount }) => {
   const { lg, sm } = useMediaQuery();
-  const url = `${seoContents.siteUrl}${pages.category.url}/${category}`;
+  const url = `${seoContents.siteUrl}${pages.category.url}/${categoryType}`;
 
   const breadCrumbs: Crumbs[] = [
     {
       id: 1,
-      href: pages.top.url,
-      label: pages.top.title,
+      href: pagesPath.$url().pathname,
+      label: 'トップ',
     },
     {
       id: 2,

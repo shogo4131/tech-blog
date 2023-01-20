@@ -5,8 +5,9 @@ import { useRouter } from 'next/router';
 
 import { clsx } from 'clsx';
 
-import { pages } from '../../constants/pages';
-import { useMediaQuery } from '../../hooks/useMediaQuery';
+import { pagesPath } from '@/lib/$path';
+
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 import styles from './index.module.css';
 
@@ -24,14 +25,14 @@ export const Header: FC = () => {
   const { sm } = useMediaQuery();
 
   const headerTitle = (
-    <Link href={pages.top.url} title="Reactおじさんブログ">
+    <Link href={pagesPath.$url()} title="Reactおじさんブログ">
       Reactおじさんブログ
     </Link>
   );
 
   return (
     <header className={clsx(styles.root, { [styles.sm]: sm })}>
-      {pages.top.url === asPath ? <h1>{headerTitle}</h1> : <div>{headerTitle}</div>}
+      {pagesPath.$url().pathname === asPath ? <h1>{headerTitle}</h1> : <div>{headerTitle}</div>}
       <ul className={styles.headerBanner}>
         {headerLinks.map(({ title, url, imagePath, alt }) => (
           <li key={title}>

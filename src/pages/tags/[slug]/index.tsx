@@ -2,6 +2,7 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
 import { clsx } from 'clsx';
 
+import { pagesPath } from '@/lib/$path';
 import { client } from '@/lib/client';
 import type { TagResponseData, BlogResponseData, Blog } from '@/types/api';
 
@@ -28,8 +29,8 @@ const Tags: NextPage<Props> = ({ contents, tag }) => {
   const breadCrumbs: Crumbs[] = [
     {
       id: 1,
-      href: pages.top.url,
-      label: pages.top.title,
+      href: pagesPath.$url().pathname,
+      label: 'トップ',
     },
     {
       id: 2,

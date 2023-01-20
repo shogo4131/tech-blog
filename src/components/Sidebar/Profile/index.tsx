@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import Link from 'next/link';
 
-import { pages } from '../../../constants/pages';
+import { pagesPath } from '@/lib/$path';
 
 import styles from './index.module.css';
 
@@ -26,7 +26,7 @@ export const Profile: FC = () => {
           <p>勉強会の講師もしてます。</p>
           <p>
             詳細は
-            <Link href={pages.profile.url} className={styles.profileDetail}>
+            <Link href={pagesPath.profile.$url()} className={styles.profileDetail}>
               <span>こちら</span>
               <img
                 src="/images/arrow-right-blue.svg"

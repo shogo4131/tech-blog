@@ -7,6 +7,7 @@ import cheerio from 'cheerio';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/base16/horizon-dark.css';
 
+import { pagesPath } from '@/lib/$path';
 import { client } from '@/lib/client';
 import { Blog, BlogResponseData, BlogDetailResponseData, Toc as TocList } from '@/types/api';
 
@@ -38,16 +39,17 @@ const BlogDetail: NextPage<Props> = ({
   description,
   updatedAt,
 }) => {
-  const url = `${seoContents.siteUrl}${pages.blog.url}/${id}`;
+  const url = `${seoContents.siteUrl}${pagesPath.blog._id(id).$url().query.id}`;
 
   const breadCrumbs: Crumbs[] = [
     {
       id: 1,
-      href: pages.top.url,
-      label: pages.top.title,
+      href: pagesPath.$url().pathname,
+      label: 'トップ',
     },
     {
       id: 2,
+      // TODO: pathpidaの型にする
       href: `${pages.category.url}/${categoryId}`,
       label: category.toString(),
     },

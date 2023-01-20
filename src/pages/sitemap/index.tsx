@@ -3,6 +3,7 @@ import { Fragment } from 'react';
 import type { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
 
+import { pagesPath } from '@/lib/$path';
 import { client } from '@/lib/client';
 import { Category, CategoryResponseData } from '@/types/api';
 
@@ -10,19 +11,21 @@ import { BreadCrumb, Crumbs } from '@/components/BreadCrumb';
 import { Layout } from '@/components/Layout';
 import { Seo } from '@/components/Seo';
 
-import { pages, seoContents } from '../../constants';
+import { seoContents } from '../../constants';
 
 import styles from './index.module.css';
+
+const pageTitle = 'サイトマップ';
 
 const breadCrumbs: Crumbs[] = [
   {
     id: 1,
-    href: pages.top.url,
-    label: pages.top.title,
+    href: pagesPath.$url().pathname,
+    label: 'トップ',
   },
   {
     id: 2,
-    label: pages.sitemap.title,
+    label: pageTitle,
   },
 ];
 
@@ -32,31 +35,31 @@ const Sitemap: NextPage<{ contents: Category[] }> = ({ contents }) => {
   return (
     <Layout>
       <Seo
-        title={`${pages.sitemap.title} | ${blogTitle}`}
+        title={`${pageTitle} | ${blogTitle}`}
         description={description}
-        url={`${siteUrl}${pages.sitemap.url}`}
+        url={`${siteUrl}${pagesPath.sitemap.$url().pathname}`}
       />
       <div className={styles.root}>
         <BreadCrumb items={breadCrumbs} />
-        <h1 className={styles.title}>{pages.sitemap.title}</h1>
+        <h1 className={styles.title}>{pageTitle}</h1>
         <ul className={styles.contents}>
           {contents.map(({ id, category, post }) => (
             <Fragment key={id}>
               <li className={styles.category}>
-                <Link href={`${pages.category.url}/${id}`}>{category}</Link>
+                <Link href={pagesPath.category._slug(id).$url()}>{category}</Link>
               </li>
               {post.map(({ id, title }) => (
                 <li key={id} className={styles.blogTitle}>
-                  <Link href={`${pages.blog.url}/${id}`}>{title}</Link>
+                  <Link href={pagesPath.blog._id(id).$url()}>{title}</Link>
                 </li>
               ))}
             </Fragment>
           ))}
           <li className={styles.category}>
-            <Link href={pages.profile.url}>プロフィール</Link>
+            <Link href={pagesPath.profile.$url()}>プロフィール</Link>
           </li>
           <li className={styles.category}>
-            <Link href={pages.privacy.url}>免責事項・プライバシーポリシー</Link>
+            <Link href={pagesPath.privacy.$url()}>免責事項・プライバシーポリシー</Link>
           </li>
           <li className={styles.category}>
             <a href="https://forms.gle/Dvt3wWcXDzENR97CA" target="_blank" rel="noopener noreferrer">
