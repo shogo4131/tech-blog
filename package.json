@@ -72,7 +72,7 @@
     "next-sitemap": "^3.1.52",
     "npm-run-all": "^4.1.5",
     "pathpida": "^0.20.1",
-    "prettier": "^2.8.3",
+    "prettier": "^2.8.4",
     "scaffdog": "^2.4.0",
     "storybook-addon-next-router": "^4.0.2",
     "storybook-css-modules-preset": "^1.1.1",
