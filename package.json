@@ -1,6 +1,6 @@
 {
   "name": "tech-blog",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "private": true,
   "scripts": {
     "dev": "run-p -cl dev:*",
@@ -18,7 +18,8 @@
     "test": "jest",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "createData": "node createData.js"
   },
   "dependencies": {
     "axios": "^1.2.5",
