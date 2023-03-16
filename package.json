@@ -35,7 +35,7 @@
     "use-media": "^1.4.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.12",
+    "@babel/core": "^7.21.3",
     "@netlify/plugin-nextjs": "^4.32.2",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.16",
