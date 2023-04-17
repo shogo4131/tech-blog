@@ -1,12 +1,12 @@
-import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 
 import { Chip } from './index';
 
 export default {
   component: Chip,
-} as ComponentMeta<typeof Chip>;
+} as Meta<typeof Chip>;
 
-export const Default: ComponentStoryObj<typeof Chip> = {
+export const Default: StoryObj<typeof Chip> = {
   args: {
     tags: [
       {

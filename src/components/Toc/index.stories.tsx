@@ -1,12 +1,12 @@
-import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 
 import { Toc } from './index';
 
 export default {
   component: Toc,
-} as ComponentMeta<typeof Toc>;
+} as Meta<typeof Toc>;
 
-export const Default: ComponentStoryObj<typeof Toc> = {
+export const Default: StoryObj<typeof Toc> = {
   args: {
     toc: [
       { id: 0, text: 'レンダリングとは', tag: 'span' },
