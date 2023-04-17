@@ -14214,7 +14214,7 @@ saxes@^6.0.0:
   dependencies:
     xmlchars "^2.2.0"
 
-scaffdog@^2.4.0:
+scaffdog@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/scaffdog/-/scaffdog-2.5.0.tgz#9788500f602b795419f4b74ce038874debdc6b38"
   integrity sha512-5TmoB25CdxWS1LhObK36LC5e8pPW06D+UsKbRhePF76d7gAMSt97u9lfq+mPFy8BA+tNhv+QPPRB0yloC8wpcQ==
