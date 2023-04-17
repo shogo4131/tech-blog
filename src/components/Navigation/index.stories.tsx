@@ -1,9 +1,9 @@
-import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 
 import { Navigation } from './index';
 
 export default {
   component: Navigation,
-} as ComponentMeta<typeof Navigation>;
+} as Meta<typeof Navigation>;
 
-export const Default: ComponentStoryObj<typeof Navigation> = {};
+export const Default: StoryObj<typeof Navigation> = {};

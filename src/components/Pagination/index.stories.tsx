@@ -1,17 +1,19 @@
-import { ComponentMeta, Story } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 
 import { Pagenation, Props } from './index';
 
 export default {
   component: Pagenation,
-} as ComponentMeta<typeof Pagenation>;
+} as Meta<typeof Pagenation>;
 
-const Template: Story<Props> = (args) => {
+const Template: StoryFn<Props> = (args) => {
   return <Pagenation {...args} />;
 };
 
-export const Default = Template.bind({});
+export const Default = {
+  render: Template,
 
-Default.args = {
-  totalCount: 12,
+  args: {
+    totalCount: 12,
+  },
 };

@@ -1,4 +1,3 @@
-import { RouterContext } from 'next/dist/shared/lib/router-context';
 import '../src/styles/globals.css';
 import 'destyle.css';
 
@@ -9,9 +8,5 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
-  },
-  /* storybookでnext/routerを使用する設定 */
-  nextRouter: {
-    Provider: RouterContext.Provider,
   },
 };
