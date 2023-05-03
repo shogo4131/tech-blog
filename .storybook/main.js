@@ -9,11 +9,10 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     'storybook-css-modules-preset',
+    'storycap',
   ],
-  framework: {
-    name: '@storybook/nextjs',
-    options: {},
-  },
+  framework: { name: '@storybook/nextjs', options: {} },
+
   webpackFinal: async (baseConfig) => {
     baseConfig.resolve.modules = [
       ...(baseConfig.resolve.modules || []),
