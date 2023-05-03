@@ -16,17 +16,17 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name: Configure AWS Credentials
+      - name: Install Yarn and configure AWS Credentials
+        run: |
+          npm install -g yarn
+          yarn install
         uses: aws-actions/configure-aws-credentials@master
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-1
-      - name: Install dependencies
-        run: npm ci
-      - name: Buid Storybook
-        run: npm run storybook:build
-      - name: Run Storycap
-        run: npm run vrt:snapshot
-      - name: Run reg-suit
-        run: npm run vrt:run
+      - name: Build, Snapshot and Run VRT
+        run: |
+          yarn build-storybook
+          yarn screenshot
+          yarn regression
