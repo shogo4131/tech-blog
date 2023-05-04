@@ -28,7 +28,7 @@
     "cheerio": "^1.0.0-rc.12",
     "clsx": "^1.2.1",
     "destyle.css": "^4.0.0",
-    "highlight.js": "^11.7.0",
+    "highlight.js": "^11.8.0",
     "microcms-js-sdk": "^2.3.2",
     "next": "^13.2.4",
     "react": "18.2.0",
