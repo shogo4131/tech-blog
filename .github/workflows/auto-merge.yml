@@ -23,8 +23,10 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 18
-      - name: Install yarn
-        run: npm ci -g yarn
+      - name: Install Yarn
+        run: |
+          npm install -g yarn
+          yarn install
       - name: Run linter
         run: yarn lint
       - name: Run prettier
