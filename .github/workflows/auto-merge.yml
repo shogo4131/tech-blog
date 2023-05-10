@@ -25,7 +25,7 @@ jobs:
           node-version: 18
       - name: Install Yarn
         run: |
-          npm ci -g yarn
+          npm install -g yarn
           yarn install
       - name: Run linter
         run: yarn lint
