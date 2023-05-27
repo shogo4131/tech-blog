@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import Image from 'next/image';
 
 import cheerio from 'cheerio';
 import hljs from 'highlight.js';
@@ -84,9 +85,9 @@ const BlogDetail: NextPage<Props> = ({
         <div className={styles.header}>
           <h1 className={styles.title}>{title}</h1>
           <span className={styles.datetime}>
-            <img src="/images/clock.svg" alt="日付" height={16} width={16} />
+            <Image src="/images/clock.svg" alt="日付" height={16} width={16} />
             <time dateTime={createdAt}>{createdAt.slice(0, 10)}</time>
-            <img src="/images/update-time.svg" alt="更新日" height={16} width={16} />
+            <Image src="/images/update-time.svg" alt="更新日" height={16} width={16} />
             <time dateTime={updatedAt}>{updatedAt.slice(0, 10)}</time>
           </span>
           <Chip tags={tags} />

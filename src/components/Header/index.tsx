@@ -1,5 +1,6 @@
 import { FC } from 'react';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -37,7 +38,7 @@ export const Header: FC = () => {
         {headerLinks.map(({ title, url, imagePath, alt }) => (
           <li key={title}>
             <a href={url} className={styles.image}>
-              <img src={imagePath} alt={alt} height={24} width={24} />
+              <Image src={imagePath} alt={alt} height={24} width={24} />
             </a>
           </li>
         ))}
