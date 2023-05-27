@@ -4,3 +4,5 @@ yarn.lock
 public
 out
 .scaffdog
+__screenshots__
+storybook-static

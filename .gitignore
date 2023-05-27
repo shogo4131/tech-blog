@@ -37,4 +37,9 @@ yarn-error.log*
 !.gitkeep
 
 # env
+.env.reg
 .env
+
+# storybook
+storybook-static
+__screenshots__
