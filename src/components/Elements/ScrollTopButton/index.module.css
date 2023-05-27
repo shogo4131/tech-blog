@@ -1,0 +1,12 @@
+.scrollButton {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.hidden {
+  display: none;
+}

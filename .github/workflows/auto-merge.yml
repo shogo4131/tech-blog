@@ -1,0 +1,40 @@
+name: Dependabot auto-merge
+on:
+  pull_request:
+    types: [opened]
+
+permissions:
+  pull-requests: write
+  contents: write
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v1.1.1
+        with:
+          github-token: '${{ secrets.GITHUB_TOKEN }}'
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+      - name: Install Yarn
+        run: |
+          npm install -g yarn
+          yarn install
+      - name: Run linter
+        run: yarn lint
+      - name: Run prettier
+        run: yarn prettier
+      - name: Automatically merge patch versions
+        if: ${{ steps.metadata.outputs.update-type == 'version-update:semver-patch' }}
+        run: |
+          gh pr merge --auto --merge "$PR_URL"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

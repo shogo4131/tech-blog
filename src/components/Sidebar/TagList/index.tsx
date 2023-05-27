@@ -1,5 +1,7 @@
 import { FC } from 'react';
 
+import Image from 'next/image';
+
 import { Chip } from '@/components/Chip';
 
 import sidebarJson from '../../../../public/sidebar.json';
@@ -12,7 +14,7 @@ export const TagList: FC = () => {
   return (
     <div className={styles.root}>
       <div className={styles.title}>
-        <img src="/images/tag.svg" alt="タグ一覧" height={40} width={40} />
+        <Image src="/images/tag.svg" alt="タグ一覧" height={40} width={40} />
         <div className={styles.tag}>
           <h4>タグ一覧</h4>
           <span>Tag Lists</span>
