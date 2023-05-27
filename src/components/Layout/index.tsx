@@ -1,5 +1,7 @@
 import { FC, ReactNode, useCallback, useEffect, useState } from 'react';
 
+import Image from 'next/image';
+
 import { clsx } from 'clsx';
 
 import { Button } from '@/components/Button';
@@ -55,7 +57,7 @@ export const Layout: FC<Props> = ({ className, children }) => {
         className={clsx(styles.scrollButton, { [styles.hidden]: isHidden })}
         onClick={onClickScrollTopHandler}
       >
-        <img src="/images/arrow-up.svg" alt="スクロールトップ" />
+        <Image src="/images/arrow-up.svg" alt="スクロールトップ" height={24} width={24} />
       </Button>
     </>
   );

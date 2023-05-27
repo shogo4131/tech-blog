@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { Fragment } from 'react';
 
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 import { clsx } from 'clsx';
@@ -27,14 +28,14 @@ export const BreadCrumb: FC<Props> = ({ className, items }) => {
 
   return (
     <div className={clsx(styles.root, className)}>
-      <img src="/images/home.svg" alt="home" className={styles.homeIcon} height={11} width={11} />
+      <Image src="/images/home.svg" alt="home" className={styles.homeIcon} height={11} width={11} />
       {items.map(({ id, href, label }) => (
         <Fragment key={id}>
           <div className={styles.label} onClick={() => onClickLinkHandler(href)}>
             {label}
           </div>
           {href && (
-            <img
+            <Image
               src="/images/arrow-right.svg"
               alt="arrow-right"
               className={styles.arrowRight}

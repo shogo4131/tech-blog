@@ -1,5 +1,7 @@
 import type { FC, ComponentProps, ChangeEventHandler } from 'react';
 
+import Image from 'next/image';
+
 import { clsx } from 'clsx';
 
 import styles from './index.module.css';
@@ -41,7 +43,7 @@ export const InputFiled: FC<Props> = ({
           <input {...rest} className={clsx(styles.input, inputClassName)} onChange={onChange} />
           {surffixIcon && (
             <div className={styles.surffixIcon}>
-              <img src={surffixIcon} alt="search" height={20} width={20} />
+              <Image src={surffixIcon} alt="search" height={20} width={20} />
             </div>
           )}
         </div>

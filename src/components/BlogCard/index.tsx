@@ -1,5 +1,6 @@
 import { FC } from 'react';
 
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { pagesPath } from '@/lib/$path';
@@ -19,10 +20,11 @@ export const BlogCard: FC<Props> = ({ content }) => {
   return (
     <div className={styles.root}>
       <Link href={pagesPath.blog._id(id).$url()}>
-        <img
+        <Image
           src={thumbnail.url}
           height={600}
           width={1200}
+          sizes="100vw"
           alt="thumbnail"
           className={styles.thumbnail}
         />
