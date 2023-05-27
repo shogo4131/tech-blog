@@ -37,6 +37,16 @@ jobs:
         run: |
           npm install -g yarn
           yarn install
+      - name: workaround for detached HEAD
+        run: |
+          if [[ $GITHUB_EVENT_NAME == 'pull_request' ]]; then
+            echo "PR event, checking out PR branch"
+            git fetch origin pull/${{ github.event.pull_request.number }}/head:${{ github.head_ref }}
+            git checkout ${{ github.head_ref }}
+          else
+            echo "Non-PR event, checking out ${{ github.ref }}"
+            git checkout ${GITHUB_REF#refs/heads/} || git checkout -b ${GITHUB_REF#refs/heads/} && git pull
+          fi
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@master
         with:
