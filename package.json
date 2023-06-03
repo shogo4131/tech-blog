@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "run-p -cl dev:*",
     "dev:next": "next dev && node createData.js",
-    "dev:path": "pathpida --watch --output src/lib",
     "build": "pathpida && next build && node createData.js && next export && next-sitemap --config next-sitemap.config.js",
     "start": "next start",
     "lint": "next lint --cache",
@@ -16,6 +15,7 @@
     "prettier:fix": "prettier --write .",
     "typecheck": "tsc --noEmit",
     "test": "jest",
+    "generate:path": "pathpida --watch --output src/lib",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "regression": "reg-suit run",
