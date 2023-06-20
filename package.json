@@ -80,7 +80,7 @@
     "reg-publish-s3-plugin": "^0.12.1",
     "reg-suit": "^0.12.1",
     "scaffdog": "^2.5.0",
-    "storybook": "^7.0.20",
+    "storybook": "^7.0.22",
     "storybook-css-modules-preset": "^1.1.1",
     "storycap": "^4.1.1",
     "stylelint": "^14.16.1",
