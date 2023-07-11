@@ -40,7 +40,7 @@
     "@babel/core": "^7.22.5",
     "@netlify/plugin-nextjs": "^4.38.1",
     "@storybook/addon-actions": "^7.0.23",
-    "@storybook/addon-essentials": "^7.0.22",
+    "@storybook/addon-essentials": "^7.0.26",
     "@storybook/addon-interactions": "^7.0.26",
     "@storybook/addon-links": "^7.0.26",
     "@storybook/nextjs": "^7.0.25",
