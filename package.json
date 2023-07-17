@@ -76,7 +76,7 @@
     "pathpida": "^0.20.1",
     "prettier": "^2.8.4",
     "reg-keygen-git-hash-plugin": "^0.12.2",
-    "reg-notify-github-plugin": "^0.12.1",
+    "reg-notify-github-plugin": "^0.12.2",
     "reg-publish-s3-plugin": "^0.12.1",
     "reg-suit": "^0.12.1",
     "scaffdog": "^2.5.0",
