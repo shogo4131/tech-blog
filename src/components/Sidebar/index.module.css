@@ -3,9 +3,11 @@
   margin-left: 32px;
 }
 
-.xl {
-  max-width: none;
-  margin-left: unset;
+@media (max-width: 1380px) {
+  .root {
+    max-width: none;
+    margin-left: unset;
+  }
 }
 
 .input {

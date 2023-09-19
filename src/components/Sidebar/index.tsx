@@ -26,7 +26,7 @@ export const Sidebar: FC<Props> = () => {
   };
 
   return (
-    <aside className={clsx(styles.root, { [styles.xl]: xl })}>
+    <aside className={clsx(styles.root)}>
       <Midworks />
       {!xl && (
         <InputFiled
