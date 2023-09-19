@@ -70,7 +70,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const blogs = await client.get<BlogResponseData>({ endpoint: 'blog' });
 
   const paths = range(1, Math.ceil(blogs.totalCount / 9)).map(
-    (page) => `/category/${blogs.contents[0].category[0].id}/page/${page}`
+    (page) => `/category/${blogs.contents[0].category[0].id}/page/${page}`,
   );
 
   return {
