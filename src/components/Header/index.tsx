@@ -8,6 +8,8 @@ import { clsx } from 'clsx';
 
 import { pagesPath } from '@/lib/$path';
 
+import { useMediaQuery } from '@/hooks/useMediaQuery';
+
 import styles from './index.module.css';
 
 const headerLinks = [
@@ -21,6 +23,7 @@ const headerLinks = [
 
 export const Header: FC = () => {
   const { asPath } = useRouter();
+  const { sm } = useMediaQuery();
 
   const headerTitle = (
     <Link href={pagesPath.$url()} title="Reactおじさんブログ">
@@ -29,7 +32,7 @@ export const Header: FC = () => {
   );
 
   return (
-    <header className={clsx(styles.root)}>
+    <header className={clsx(styles.root, { [styles.sm]: sm })}>
       {pagesPath.$url().pathname === asPath ? <h1>{headerTitle}</h1> : <div>{headerTitle}</div>}
       <ul className={styles.headerBanner}>
         {headerLinks.map(({ title, url, imagePath, alt }) => (

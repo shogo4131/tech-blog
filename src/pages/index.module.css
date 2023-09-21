@@ -9,14 +9,10 @@
   margin-bottom: 20px;
 }
 
-@media (max-width: 1380px) {
-  .blogItem {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.lg {
+  grid-template-columns: repeat(2, 1fr);
 }
 
-@media (max-width: 540px) {
-  .blogItem {
-    grid-template-columns: repeat(1, 1fr);
-  }
+.sm {
+  grid-template-columns: repeat(1, 1fr);
 }

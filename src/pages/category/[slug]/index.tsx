@@ -1,5 +1,7 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
+import { clsx } from 'clsx';
+
 import { pagesPath } from '@/lib/$path';
 import { client } from '@/lib/client';
 import type { CategoryResponseData, BlogResponseData, Blog } from '@/types/api';
@@ -9,6 +11,8 @@ import { BreadCrumb, Crumbs } from '@/components/BreadCrumb';
 import { Layout } from '@/components/Layout';
 import { Pagenation } from '@/components/Pagination';
 import { Seo } from '@/components/Seo';
+
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 import { pages, seoContents } from '../../../constants';
 import styles from '../../index.module.css';
@@ -24,6 +28,7 @@ const PER_PAGE = 9;
 
 // TODO: retrun 以下を共通化する
 const Category: NextPage<Props> = ({ contents, category, categoryType, totalCount }) => {
+  const { lg, sm } = useMediaQuery();
   const url = `${seoContents.siteUrl}${pages.category.url}/${categoryType}`;
 
   const breadCrumbs: Crumbs[] = [
@@ -48,7 +53,7 @@ const Category: NextPage<Props> = ({ contents, category, categoryType, totalCoun
       <div>
         <article>
           <BreadCrumb items={breadCrumbs} className={styles.breadCrumb} />
-          <div className={styles.blogItem}>
+          <div className={clsx(styles.blogItem, { [styles.lg]: lg, [styles.sm]: sm })}>
             {contents.map((content) => (
               <BlogCard key={content.id} content={content} />
             ))}

@@ -3,13 +3,11 @@
   margin-left: 32px;
 }
 
-.input {
-  height: 48px;
+.xl {
+  max-width: none;
+  margin-left: unset;
 }
 
-@media (max-width: 1040px) {
-  .root {
-    max-width: none;
-    margin-left: unset;
-  }
+.input {
+  height: 48px;
 }
