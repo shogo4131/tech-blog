@@ -5,7 +5,9 @@
   padding: 40px 48px 160px;
 }
 
-.xl {
-  display: block;
-  padding: 20px 12px 30px;
+@media (max-width: 1040px) {
+  .root {
+    display: block;
+    padding: 20px 12px 30px;
+  }
 }
