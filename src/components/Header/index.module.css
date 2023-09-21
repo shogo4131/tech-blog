@@ -18,6 +18,8 @@
   display: flex;
 }
 
-.sm {
-  padding: 16px;
+@media (max-width: 540px) {
+  .root {
+    padding: 16px 32px;
+  }
 }
