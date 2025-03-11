@@ -36,7 +36,7 @@
     "react-gtm-module": "^2.0.11"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.9",
+    "@babel/core": "^7.26.10",
     "@netlify/plugin-nextjs": "^4.38.1",
     "@storybook/addon-actions": "^7.4.2",
     "@storybook/addon-essentials": "^7.4.2",
